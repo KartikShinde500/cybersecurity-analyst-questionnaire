@@ -1,0 +1,404 @@
+<html>
+
+<head>
+    <title>Cybersecurity Interview Preparation</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+   
+</head>
+
+<body>
+
+    <div class="container main-container">
+
+        <!-- Page Header -->
+        <div class="text-center mb-4">
+
+            <h2 class="page-title">
+                Cybersecurity Interview Preparation
+            </h2>
+
+            <p class="text-muted">
+                Security Analyst | MDE | XDR | Purview DLP
+            </p>
+
+        </div>
+
+
+        <!-- Accordion -->
+        <div class="accordion" id="partsAccordion"></div>
+
+    </div>
+
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+      integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+
+        /*
+        ============================================================
+        CYBERSECURITY INTERVIEW QUESTIONS
+        ============================================================
+        */
+
+        const interviewParts = [
+
+            {
+                id: "part1",
+                title: "Part 1 – Security Fundamentals",
+                description: "Basic cybersecurity and security fundamentals",
+
+                questions: [
+
+                    "What are the roles and responsibilities of a Security Analyst?",
+
+                    "What is a Security Incident?",
+
+                    "What is the CIA Triad?",
+
+                    "What is the difference between Threat, Vulnerability and Risk?",
+
+                    "What is the difference between Virus, Trojan, Worm and Ransomware?"
+
+                ]
+            },
+
+
+            {
+                id: "part2",
+                title: "Part 2 – Computer Network Fundamentals",
+                description: "Networking concepts required for Security Analyst interviews",
+
+                questions: [
+
+                    "What is Networking?",
+
+                    "What is a Firewall?",
+
+                    "Explain the OSI Model.",
+
+                    "What is TCP?",
+
+                    "What is TCP 3-Way Handshake?",
+
+                    "What is UDP?",
+
+                    "What is Routing?",
+
+                    "What is DNS?",
+
+                    "What is DHCP?",
+
+                    "What is an IP Address?",
+
+                    "What is the difference between a Router and a Switch?",
+
+                    "What is Wireshark?"
+
+                ]
+            },
+
+
+            {
+                id: "part3",
+                title: "Part 3 – Microsoft Defender for Endpoint (MDE)",
+                description: "MDE concepts and security capabilities",
+
+                questions: [
+
+                    "What is Microsoft Defender for Endpoint?",
+
+                    "What is EDR and why is it important?",
+
+                    "What is Device Timeline?",
+
+                    "What is Process Tree?",
+
+                    "What is Device Isolation?",
+
+                    "What is ASR – Attack Surface Reduction?",
+
+                    "What is AIR – Automated Investigation and Remediation?",
+
+                    "What is a False Positive?",
+
+                    "What is Fine-Tuning in MDE?",
+
+                    "How do you generate reports in Microsoft Defender for Endpoint?"
+
+                ]
+            },
+
+
+            {
+                id: "part4",
+                title: "Part 4 – MDE Agent & Endpoint Operations",
+                description: "Practical MDE agent and endpoint operational experience",
+
+                questions: [
+
+                    "Have you worked on MDE Agent Installation/Onboarding?",
+
+                    "How do you troubleshoot MDE Agent Installation or Onboarding issues?",
+
+                    "What do you do when an MDE device is not communicating with the Defender Portal?",
+
+                    "What do you do when an MDE device shows as Unhealthy?",
+
+                    "What is your daily MDE monitoring process?",
+
+                    "What kind of MDE operational activities have you performed?",
+
+                    "What is Whitelisting in MDE?",
+
+                    "How do you handle a Whitelisting request?",
+
+                    "What do you do when a legitimate application is blocked by MDE?",
+
+                    "How do you reduce False Positives in MDE?"
+
+                ]
+            },
+
+
+            {
+                id: "part5",
+                title: "Part 5 – MDE Deployment & Policy Management",
+                description: "MDE deployment, onboarding and security policy management",
+
+                questions: [
+
+                    "How would you deploy Microsoft Defender for Endpoint on 25,000 devices?",
+
+                    "What challenges can occur during Defender deployment?",
+
+                    "How will you deploy Microsoft Defender for Endpoint using Intune on a device?",
+
+                    "How will you onboard a single Windows laptop using the Local Script method?",
+
+                    "How would you design and implement MDE security policies?",
+
+                    "What is your approach to MDE policy Fine-Tuning?"
+
+                ]
+            },
+
+
+            {
+                id: "part6",
+                title: "Part 6 – Microsoft Defender XDR",
+                description: "Microsoft Defender XDR and security monitoring",
+
+                questions: [
+
+                    "What is Microsoft Defender XDR?",
+
+                    "What is the difference between MDE and XDR?",
+
+                    "What is Alert Triage and Security Monitoring?"
+
+                ]
+            },
+
+
+            {
+                id: "part7",
+                title: "Part 7 – Microsoft Purview & DLP",
+                description: "Microsoft Purview, Data Loss Prevention and data security",
+
+                questions: [
+
+                    "What is Microsoft Purview?",
+
+                    "What is Data Loss Prevention (DLP)?",
+
+                    "What is Simulation Mode in Purview DLP?",
+
+                    "How do you investigate a DLP Alert?",
+
+                    "How would you implement Microsoft Purview DLP in an organization?",
+
+                    "What operational activities do you perform after implementing Purview DLP?"
+
+                ]
+            },
+
+
+            {
+                id: "part8",
+                title: "Part 8 – Incident Response & Scenario-Based Questions",
+                description: "Important L1/L2 incident response and scenario-based questions",
+
+                questions: [
+
+                    "How do you investigate an incident from start to finish and what actions do you take?",
+
+                    "Tell me about an incident you investigated.",
+
+                    "If a Malware or Ransomware alert is generated, what will you do?",
+
+                    "A legitimate application is blocked by MDE. What will you do?",
+
+                    "A DLP policy blocks a business-critical file. What will you do?",
+
+                    "How do you reduce False Positives after deploying a security policy?",
+
+                    "What will you do if an MDE Agent is not communicating with the Defender Portal?",
+
+                    "What will you do if an endpoint shows unhealthy in MDE?"
+
+                ]
+            }
+
+        ];
+
+
+        /*
+        ============================================================
+        GENERATE HTML DYNAMICALLY
+        ============================================================
+        */
+
+        const partsAccordion = document.getElementById("partsAccordion");
+
+        let questionNumber = 1;
+
+
+        interviewParts.forEach((part, partIndex) => {
+
+            const partId = part.id;
+
+            let questionsHTML = "";
+
+
+            part.questions.forEach((question, questionIndex) => {
+
+                const questionId =
+                    `${partId}-question-${questionIndex}`;
+
+                questionsHTML += `
+
+                    <div class="accordion-item">
+
+                        <h2 class="accordion-header">
+
+                            <button
+                                class="accordion-button collapsed question-button p-2"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#${questionId}"
+                                aria-expanded="false"
+                                aria-controls="${questionId}">
+
+                                <span class="question-number me-2">
+                                    Q${questionNumber}.
+                                </span>
+
+                                ${question}
+
+                            </button>
+
+                        </h2>
+
+
+                        <div
+                            id="${questionId}"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#${partId}-questions">
+
+                            <div class="accordion-body question-answer">
+
+                                <!-- Answer will be added here later -->
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                `;
+
+                questionNumber++;
+
+            });
+
+
+            const partHTML = `
+
+                <div
+                    class="accordion-item mb-3"
+                    data-part="${partId}">
+
+                    <h2 class="accordion-header">
+
+                        <button
+                            class="accordion-button collapsed part-header p-2"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#${partId}-collapse"
+                            aria-expanded="false"
+                            aria-controls="${partId}-collapse">
+
+                            ${part.title}
+
+                        </button>
+
+                    </h2>
+
+
+                    <div
+                        id="${partId}-collapse"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#partsAccordion">
+
+                        <div class="accordion-body">
+
+                            <p class="part-description mb-3">
+                                ${part.description}
+                            </p>
+
+
+                            <div
+                                class="accordion"
+                                id="${partId}-questions">
+
+                                ${questionsHTML}
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            `;
+
+
+            partsAccordion.innerHTML += partHTML;
+
+        });
+
+
+    </script>
+
+</body>
+
+</html>
