@@ -46,8 +46,7 @@
         ================================= */
 
       .part-header {
-        font-weight: 600;
-        font-size: 18px;
+        font-size: 17px;
       }
 
       /* ================================
@@ -55,8 +54,6 @@
         ================================= */
 
       .question-button {
-        font-weight: 500;
-
         /* Allow long questions to wrap */
         white-space: normal;
 
@@ -679,10 +676,9 @@
                         <li>Review new security alerts and incidents.</li>
                         <li>Prioritize alerts based on severity and business impact.</li>
                         <li>Investigate suspicious activities.</li>
-                        <li>Review Device Timeline, Process Tree, file and network information.</li>
+                        <li>Use Device Timeline, Process Tree, file and network information.</li>
                         <li>Monitor endpoint health and sensor status.</li>
-                        <li>MDE onboarding troubleshooting.</li>
-                        <li>Review security recommendations and vulnerabilities.</li>
+                        <li>Troubleshoot agent installation and onboarding issues.</li>
                         <li>Monitor false positives and fine-tune policies when required.</li>
                         <li>Prepare reports and escalate critical incidents.</li>
                     </ul>
@@ -737,12 +733,24 @@
             },
 
             {
+              question: "How do you prepare a report for security incidents?",
+
+              answer: `
+                  <div class="alert alert-success">
+                      I prepare the incident report by documenting the incident details,
+                      affected device and user, detected threat, investigation findings,
+                      actions taken, and current status. I also include the root cause
+                      and recommended remediation steps if needed.
+                  </div>
+              `,
+            },
+
+            {
               question: "Have you worked on MDE Agent Installation/Onboarding?",
 
               answer: `
                     <ul>
                         <li>Yes, I have worked with MDE endpoint onboarding.</li>
-                        <li>For a single Windows device, I can use the Local Script onboarding method.</li>
                         <li>For managed enterprise devices, onboarding can be performed using Microsoft Intune.</li>
                         <li>After onboarding, I verify the device in the Defender Portal.</li>
                         <li>I check device health, sensor status, last seen and telemetry.</li>
@@ -899,19 +907,16 @@
 
               answer: `
                     <ol>
-                        <li>Log in to the <strong>Microsoft Defender Portal</strong>.</li>
-                        <li>Go to <strong>Settings → Endpoints → Onboarding</strong>.</li>
-                        <li>Select <strong>Windows</strong>.</li>
-                        <li>Select <strong>Local Script</strong> as the onboarding method.</li>
-                        <li>Download the onboarding package/script.</li>
-                        <li>Copy the script to the target laptop.</li>
-                        <li>Run the script with <strong>Administrator privileges</strong>.</li>
-                        <li>The MDE sensor starts communicating with the Microsoft Defender cloud.</li>
-                        <li>Verify that the <strong>Microsoft Defender for Endpoint Sensor (Sense)</strong> service is running.</li>
-                        <li>Check whether the device appears in the Defender Portal.</li>
-                        <li>Verify Device Health, Last Seen and sensor status.</li>
-                        <li>Perform a test detection to confirm telemetry and alerts.</li>
-                        <li>Once verified, the endpoint is successfully onboarded.</li>
+                        <li>First step is Log in to Microsoft Defender Portal</li>
+                        <li>Then sencond step Go to onboarding. <strong>Settings → Endpoints → Onboarding</strong>.</li>
+                        <li>And then Select operaing system.</li>
+                        <li>Then select deployment method.</li>
+                        <li>Then step 4 Click Download onboarding package/script.</li>
+                        <li>A Zip file will be downloaded.</li>
+                        <li>Extract the downloaded Zip file.</li>
+                        <li>Run script file as administrator.</li>
+                        <li>The device will start onboarding to MDE.</li>
+                        <li>And verify the device appears in the Defender Portal.</li>
                     </ol>
                 `,
             },
