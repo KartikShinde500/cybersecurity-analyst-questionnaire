@@ -37,7 +37,6 @@
     ></script>
 
     <script>
-
       const interviewParts = [
         /* PART 1 */
         {
@@ -458,7 +457,6 @@
                     </ul>
                 `,
             },
-
           ],
         },
 
@@ -466,12 +464,12 @@
 
         {
           id: "part4",
-          title: "Part 4 – MDE Agent & Endpoint Operations and Report",
+          title:
+            "Part 4 – MDE Agent & Endpoint Operations and Report generation and Issue faced",
           description:
             "Practical MDE agent and endpoint operational experience",
 
           questions: [
-            
             {
               question: "What is your daily MDE operational activities?",
 
@@ -488,6 +486,38 @@
                         <li>Monitor false positives and fine-tune policies when required.</li>
                         <li>Prepare reports and escalate critical incidents.</li>
                     </ul>
+                `,
+            },
+
+            {
+              question:
+                "What issues have you faced while working with Microsoft Defender for Endpoint and how did you handle them?",
+
+              answer: `
+                    <ul>
+                        <li class=""><strong>MDE Agent/Onboarding Issues:</strong> Sometimes a device was not appearing in the Defender Portal or onboarding was not completed successfully.</li>
+                        I checked the onboarding method, network connectivity, MDE sensor/service status, and onboarding logs, then verified the device in the Defender Portal.
+
+                        <li class="mt-2"><strong>Device Unhealthy:</strong> Some devices showed an unhealthy sensor or stopped communicating with the Defender Portal.</li>
+                        I checked Last Seen, Sensor Health, network connectivity and the MDE sensor service, then coordinated with the IT team if required.
+
+                        <li class="mt-2"><strong>False Positives:</strong> Legitimate applications or activities were sometimes detected as suspicious.</li>
+                        I investigated the alert using Device Timeline, Process Tree, file information and user/business context. If it was confirmed legitimate, I followed the approval process and applied a specific exclusion or policy adjustment.
+
+                        <li class="mt-2"><strong>Application Blocking:</strong> A legitimate business application could be blocked by a security policy.</li>
+                        I verified the application, checked the detection details, confirmed the business requirement, and performed controlled policy fine-tuning after approval.
+
+                        <li class="mt-2"><strong>High Alert Volume:</strong> Some policies could generate a large number of alerts.</li>
+                        I reviewed recurring alerts, identified false positives, fine-tuned the policies and avoided unnecessary broad exclusions.
+                    </ul>
+                
+                    <div class="alert alert-success mt-3">
+                        <strong>Interview Summary:</strong>
+                        The main issues I faced were onboarding/agent health issues, false positives,
+                        application blocking and high alert volume. I handled them through
+                        troubleshooting, investigation, controlled policy fine-tuning and coordination
+                        with the IT team.
+                    </div>
                 `,
             },
 
@@ -838,7 +868,6 @@
             },
           ],
         },
-        
 
         /* PART 7 */
 
@@ -1006,7 +1035,6 @@
           ],
         },
 
-
         /* PART 8 */
 
         {
@@ -1092,24 +1120,19 @@ GENERATE HTML DYNAMICALLY
 ============================================================
 */
 
-const partsAccordion = document.getElementById("partsAccordion");
+      const partsAccordion = document.getElementById("partsAccordion");
 
-let questionNumber = 1;
+      let questionNumber = 1;
 
+      interviewParts.forEach((part) => {
+        const partId = part.id;
 
-interviewParts.forEach((part) => {
+        let questionsHTML = "";
 
-    const partId = part.id;
+        part.questions.forEach((item, questionIndex) => {
+          const questionId = `${partId}-question-${questionIndex}`;
 
-    let questionsHTML = "";
-
-
-    part.questions.forEach((item, questionIndex) => {
-
-        const questionId =
-            `${partId}-question-${questionIndex}`;
-
-        questionsHTML += `
+          questionsHTML += `
 
             <div class="accordion-item">
 
@@ -1151,12 +1174,10 @@ interviewParts.forEach((part) => {
 
         `;
 
-        questionNumber++;
+          questionNumber++;
+        });
 
-    });
-
-
-    const partHTML = `
+        const partHTML = `
 
         <div
             class="accordion-item mb-3"
@@ -1203,10 +1224,8 @@ interviewParts.forEach((part) => {
 
     `;
 
-
-    partsAccordion.innerHTML += partHTML;
-
-});
+        partsAccordion.innerHTML += partHTML;
+      });
     </script>
   </body>
 </html>
