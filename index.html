@@ -1,6 +1,5 @@
 <html>
-
-<head>
+  <head>
     <title>Cybersecurity Interview Preparation</title>
 
     <!-- Bootstrap CSS -->
@@ -10,33 +9,20 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
+  </head>
 
-   
-</head>
-
-<body>
-
+  <body>
     <div class="container main-container">
+      <!-- Page Header -->
+      <div class="text-center mb-4">
+        <h2 class="page-title">Cybersecurity Interview Preparation</h2>
 
-        <!-- Page Header -->
-        <div class="text-center mb-4">
+        <p class="text-muted">Security Analyst | MDE | XDR | Purview DLP</p>
+      </div>
 
-            <h2 class="page-title">
-                Cybersecurity Interview Preparation
-            </h2>
-
-            <p class="text-muted">
-                Security Analyst | MDE | XDR | Purview DLP
-            </p>
-
-        </div>
-
-
-        <!-- Accordion -->
-        <div class="accordion" id="partsAccordion"></div>
-
+      <!-- Accordion -->
+      <div class="accordion" id="partsAccordion"></div>
     </div>
-
 
     <!-- Bootstrap JS -->
     <script
@@ -52,353 +38,1175 @@
 
     <script>
 
-        /*
-        ============================================================
-        CYBERSECURITY INTERVIEW QUESTIONS
-        ============================================================
-        */
+      const interviewParts = [
+        /* PART 1 */
+        {
+          id: "part1",
+          title: "Part 1 – Basic Introduction & Security Fundamentals",
+          description: "Basic cybersecurity and security fundamentals",
 
-        const interviewParts = [
-
+          questions: [
             {
-                id: "part1",
-                title: "Part 1 – Security Fundamentals",
-                description: "Basic cybersecurity and security fundamentals",
+              question: "Tell me about yourself.",
 
-                questions: [
-
-                    "What are the roles and responsibilities of a Security Analyst?",
-
-                    "What is a Security Incident?",
-
-                    "What is the CIA Triad?",
-
-                    "What is the difference between Threat, Vulnerability and Risk?",
-
-                    "What is the difference between Virus, Trojan, Worm and Ransomware?"
-
-                ]
+              answer: `
+                    <ul>
+                        <li>My name is Kartik Shinde and I am from Pune.</li>
+                        <li>I completed my MCA in 2025.</li>
+                        <li>I have around one year of professional experience in Cyber Security.</li>
+                        <li>I worked with Microsoft Defender XDR, Microsoft Defender for Endpoint and Microsoft Purview.</li>
+                        <li>My responsibilities included security monitoring, alert investigation, endpoint analysis and incident reporting.</li>
+                        <li>I am interested in Security Operations, Incident Response and Threat Detection.</li>
+                    </ul>
+                `,
             },
 
-
             {
-                id: "part2",
-                title: "Part 2 – Computer Network Fundamentals",
-                description: "Networking concepts required for Security Analyst interviews",
+              question:
+                "What are the roles and responsibilities of a Security Analyst?",
 
-                questions: [
-
-                    "What is Networking?",
-
-                    "What is a Firewall?",
-
-                    "Explain the OSI Model.",
-
-                    "What is TCP?",
-
-                    "What is TCP 3-Way Handshake?",
-
-                    "What is UDP?",
-
-                    "What is Routing?",
-
-                    "What is DNS?",
-
-                    "What is DHCP?",
-
-                    "What is an IP Address?",
-
-                    "What is the difference between a Router and a Switch?",
-
-                    "What is Wireshark?"
-
-                ]
+              answer: `
+                    <ul>
+                        <li>Monitor security alerts and incidents.</li>
+                        <li>Perform alert triage based on severity.</li>
+                        <li>Investigate suspicious activities.</li>
+                        <li>Use Device Timeline and Process Tree for investigation.</li>
+                        <li>Analyze file information and network activity.</li>
+                        <li>Monitor MDE agent/device health.</li>
+                        <li>Troubleshoot agent installation and onboarding issues.</li>
+                        <li>Perform approved whitelisting/exclusions when required.</li>
+                        <li>Fine-tune security policies.</li>
+                        <li>Escalate critical incidents.</li>
+                        <li>Prepare daily/weekly security reports.</li>
+                        <li>Coordinate with IT teams for remediation.</li>
+                    </ul>
+                `,
             },
 
-
             {
-                id: "part3",
-                title: "Part 3 – Microsoft Defender for Endpoint (MDE)",
-                description: "MDE concepts and security capabilities",
+              question: "What is a Security Incident?",
 
-                questions: [
-
-                    "What is Microsoft Defender for Endpoint?",
-
-                    "What is EDR and why is it important?",
-
-                    "What is Device Timeline?",
-
-                    "What is Process Tree?",
-
-                    "What is Device Isolation?",
-
-                    "What is ASR – Attack Surface Reduction?",
-
-                    "What is AIR – Automated Investigation and Remediation?",
-
-                    "What is a False Positive?",
-
-                    "What is Fine-Tuning in MDE?",
-
-                    "How do you generate reports in Microsoft Defender for Endpoint?"
-
-                ]
+              answer: `
+                    <ol>
+                        <li>A security incident is a <strong>security event that has actual or potential security impact</strong>.</li>
+                        <li>It can affect:
+                            <ul>
+                                <li>Confidentiality</li>
+                                <li>Integrity</li>
+                                <li>Availability</li>
+                            </ul>
+                        </li>
+                        <li>Examples:
+                            <ul>
+                                <li>Malware infection</li>
+                                <li>Ransomware</li>
+                                <li>Phishing</li>
+                                <li>Unauthorized access</li>
+                                <li>Data leakage</li>
+                            </ul>
+                        </li>
+                    </ol>
+                `,
             },
 
-
             {
-                id: "part4",
-                title: "Part 4 – MDE Agent & Endpoint Operations",
-                description: "Practical MDE agent and endpoint operational experience",
-
-                questions: [
-
-                    "Have you worked on MDE Agent Installation/Onboarding?",
-
-                    "How do you troubleshoot MDE Agent Installation or Onboarding issues?",
-
-                    "What do you do when an MDE device is not communicating with the Defender Portal?",
-
-                    "What do you do when an MDE device shows as Unhealthy?",
-
-                    "What is your daily MDE monitoring process?",
-
-                    "What kind of MDE operational activities have you performed?",
-
-                    "What is Whitelisting in MDE?",
-
-                    "How do you handle a Whitelisting request?",
-
-                    "What do you do when a legitimate application is blocked by MDE?",
-
-                    "How do you reduce False Positives in MDE?"
-
-                ]
-            },
-
-
-            {
-                id: "part5",
-                title: "Part 5 – MDE Deployment & Policy Management",
-                description: "MDE deployment, onboarding and security policy management",
-
-                questions: [
-
-                    "How would you deploy Microsoft Defender for Endpoint on 25,000 devices?",
-
-                    "What challenges can occur during Defender deployment?",
-
-                    "How will you deploy Microsoft Defender for Endpoint using Intune on a device?",
-
-                    "How will you onboard a single Windows laptop using the Local Script method?",
-
-                    "How would you design and implement MDE security policies?",
-
-                    "What is your approach to MDE policy Fine-Tuning?"
-
-                ]
-            },
-
-
-            {
-                id: "part6",
-                title: "Part 6 – Microsoft Defender XDR",
-                description: "Microsoft Defender XDR and security monitoring",
-
-                questions: [
-
-                    "What is Microsoft Defender XDR?",
-
-                    "What is the difference between MDE and XDR?",
-
-                    "What is Alert Triage and Security Monitoring?"
-
-                ]
-            },
-
-
-            {
-                id: "part7",
-                title: "Part 7 – Microsoft Purview & DLP",
-                description: "Microsoft Purview, Data Loss Prevention and data security",
-
-                questions: [
-
-                    "What is Microsoft Purview?",
-
-                    "What is Data Loss Prevention (DLP)?",
-
-                    "What is Simulation Mode in Purview DLP?",
-
-                    "How do you investigate a DLP Alert?",
-
-                    "How would you implement Microsoft Purview DLP in an organization?",
-
-                    "What operational activities do you perform after implementing Purview DLP?"
-
-                ]
-            },
-
-
-            {
-                id: "part8",
-                title: "Part 8 – Incident Response & Scenario-Based Questions",
-                description: "Important L1/L2 incident response and scenario-based questions",
-
-                questions: [
-
-                    "How do you investigate an incident from start to finish and what actions do you take?",
-
-                    "Tell me about an incident you investigated.",
-
-                    "If a Malware or Ransomware alert is generated, what will you do?",
-
-                    "A legitimate application is blocked by MDE. What will you do?",
-
-                    "A DLP policy blocks a business-critical file. What will you do?",
-
-                    "How do you reduce False Positives after deploying a security policy?",
-
-                    "What will you do if an MDE Agent is not communicating with the Defender Portal?",
-
-                    "What will you do if an endpoint shows unhealthy in MDE?"
-
-                ]
-            }
-
-        ];
-
-
-        /*
-        ============================================================
-        GENERATE HTML DYNAMICALLY
-        ============================================================
-        */
-
-        const partsAccordion = document.getElementById("partsAccordion");
-
-        let questionNumber = 1;
-
-
-        interviewParts.forEach((part, partIndex) => {
-
-            const partId = part.id;
-
-            let questionsHTML = "";
-
-
-            part.questions.forEach((question, questionIndex) => {
-
-                const questionId =
-                    `${partId}-question-${questionIndex}`;
-
-                questionsHTML += `
-
-                    <div class="accordion-item">
-
-                        <h2 class="accordion-header">
-
-                            <button
-                                class="accordion-button collapsed question-button p-2"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#${questionId}"
-                                aria-expanded="false"
-                                aria-controls="${questionId}">
-
-                                <span class="question-number me-2">
-                                    Q${questionNumber}.
-                                </span>
-
-                                ${question}
-
-                            </button>
-
-                        </h2>
-
-
-                        <div
-                            id="${questionId}"
-                            class="accordion-collapse collapse"
-                            data-bs-parent="#${partId}-questions">
-
-                            <div class="accordion-body question-answer">
-
-                                <!-- Answer will be added here later -->
-
-                            </div>
-
-                        </div>
-
+              question: "What is the CIA Triad?",
+
+              answer: `
+                    <ul>
+                        <li><strong>Confidentiality:</strong> Ensures that information is accessible only to authorized users.</li>
+                        <li><strong>Integrity:</strong> Ensures that data is accurate and has not been modified without authorization.</li>
+                        <li><strong>Availability:</strong> Ensures that systems and data are available when required.</li>
+                    </ul>
+
+                    <div class="alert alert-success mt-3">
+                        <strong>Easy way to remember:</strong>
+                        Confidentiality = Who can access →
+                        Integrity = Data is correct →
+                        Availability = Data is available
                     </div>
+                `,
+            },
 
-                `;
+            {
+              question:
+                "What is the difference between Threat, Vulnerability and Risk?",
 
-                questionNumber++;
+              answer: `
+                    <ul>
+                        <li><strong>Threat:</strong> Anything that can potentially cause harm to a system or organization.</li>
+                        <li><strong>Vulnerability:</strong> A weakness that can be exploited by a threat.</li>
+                        <li><strong>Risk:</strong> The potential impact or loss when a threat exploits a vulnerability.</li>
+                    </ul>
 
-            });
+                    <div class="alert alert-info mt-3">
+                        <strong>Example:</strong><br>
+                        Vulnerability = Unpatched software<br>
+                        Threat = Attacker<br>
+                        Risk = System compromise or data loss
+                    </div>
+                `,
+            },
+
+            {
+              question:
+                "What is the difference between Virus, Trojan, Worm and Ransomware?",
+
+              answer: `
+                    <ul>
+                        <li><strong>Virus:</strong> Malicious code that attaches itself to a file or program and usually requires user execution to spread.</li>
+                        <li><strong>Trojan:</strong> Malicious software that pretends to be legitimate software to trick the user.</li>
+                        <li><strong>Worm:</strong> Malware that can self-replicate and spread across systems or networks.</li>
+                        <li><strong>Ransomware:</strong> Malware that encrypts or locks data/systems and demands payment from the victim.</li>
+                    </ul>
+                `,
+            },
+          ],
+        },
+
+        /* PART 2 */
+
+        {
+          id: "part2",
+          title: "Part 2 – Computer Network Fundamentals",
+          description:
+            "Networking concepts required for Security Analyst interviews",
+
+          questions: [
+            {
+              question: "What is Networking?",
+
+              answer: `
+                    <ul>
+                        <li>Networking is the process of connecting computers, devices and systems so they can communicate and share data.</li>
+                        <li>It uses protocols such as TCP/IP, DNS, HTTP and HTTPS.</li>
+                        <li>Networking is important in cybersecurity because security analysts monitor network traffic and communication.</li>
+                    </ul>
+                `,
+            },
+
+            {
+              question: "What is a Firewall?",
+
+              answer: `
+                    <ul>
+                        <li>A firewall is a security control that monitors and controls network traffic.</li>
+                        <li>It allows or blocks traffic based on predefined rules.</li>
+                        <li>It can control traffic based on IP address, port, protocol and other conditions.</li>
+                        <li>It helps prevent unauthorized network access.</li>
+                    </ul>
+                `,
+            },
+
+            {
+              question: "Explain the OSI Model.",
+
+              answer: `
+                    <p>The OSI model has <strong>7 layers</strong>:</p>
+
+                    <ol>
+                        <li><strong>Physical</strong> – Cables, signals and physical transmission.</li>
+                        <li><strong>Data Link</strong> – MAC address and frames.</li>
+                        <li><strong>Network</strong> – IP addressing and routing.</li>
+                        <li><strong>Transport</strong> – TCP and UDP.</li>
+                        <li><strong>Session</strong> – Establishes and manages sessions.</li>
+                        <li><strong>Presentation</strong> – Data formatting, encryption and compression.</li>
+                        <li><strong>Application</strong> – Network services used by applications such as HTTP, DNS and FTP.</li>
+                    </ol>
+                `,
+            },
+
+            {
+              question: "What is TCP?",
+
+              answer: `
+                    <ul>
+                        <li>TCP stands for <strong>Transmission Control Protocol</strong>.</li>
+                        <li>It is a connection-oriented protocol.</li>
+                        <li>It provides reliable and ordered delivery of data.</li>
+                        <li>It uses acknowledgements, sequencing and retransmission.</li>
+                        <li>Examples include HTTP/HTTPS, SSH and FTP.</li>
+                    </ul>
+                `,
+            },
+
+            {
+              question: "What is TCP 3-Way Handshake?",
+
+              answer: `
+                    <ol>
+                        <li><strong>SYN:</strong> Client sends a SYN packet to the server.</li>
+                        <li><strong>SYN-ACK:</strong> Server responds with SYN-ACK.</li>
+                        <li><strong>ACK:</strong> Client sends ACK.</li>
+                    </ol>
+
+                    <div class="alert alert-success">
+                        <strong>Easy:</strong> SYN → SYN-ACK → ACK
+                    </div>
+                `,
+            },
+
+            {
+              question: "What is UDP?",
+
+              answer: `
+                    <ul>
+                        <li>UDP stands for <strong>User Datagram Protocol</strong>.</li>
+                        <li>It is connectionless.</li>
+                        <li>It is faster than TCP because it does not establish a connection before sending data.</li>
+                        <li>It does not guarantee delivery, ordering or retransmission.</li>
+                        <li>It is commonly used for DNS, streaming and VoIP.</li>
+                    </ul>
+                `,
+            },
+
+            {
+              question: "What is Routing?",
+
+              answer: `
+                    <ul>
+                        <li>Routing is the process of selecting a path for network traffic to travel from source to destination.</li>
+                        <li>Routers use routing tables to determine the best path.</li>
+                        <li>Routing can be static or dynamic.</li>
+                    </ul>
+                `,
+            },
+
+            {
+              question: "What is DNS?",
+
+              answer: `
+                    <ul>
+                        <li>DNS stands for <strong>Domain Name System</strong>.</li>
+                        <li>It converts domain names into IP addresses.</li>
+                        <li>For example, a user enters a domain name and DNS helps find the corresponding IP address.</li>
+                        <li>DNS commonly uses port <strong>53</strong>.</li>
+                    </ul>
+                `,
+            },
+
+            {
+              question: "What is DHCP?",
+
+              answer: `
+                    <ul>
+                        <li>DHCP stands for <strong>Dynamic Host Configuration Protocol</strong>.</li>
+                        <li>It automatically provides network configuration to devices.</li>
+                        <li>It can provide IP address, subnet mask, default gateway and DNS server information.</li>
+                    </ul>
+                `,
+            },
+
+            {
+              question: "What is an IP Address?",
+
+              answer: `
+                    <ul>
+                        <li>An IP address is a logical address assigned to a device on a network.</li>
+                        <li>It helps identify and communicate with devices.</li>
+                        <li>There are two common versions: <strong>IPv4</strong> and <strong>IPv6</strong>.</li>
+                        <li>Example IPv4: <strong>192.168.1.10</strong>.</li>
+                    </ul>
+                `,
+            },
+
+            {
+              question: "What is the difference between a Router and a Switch?",
+
+              answer: `
+                    <ul>
+                        <li><strong>Router:</strong> Connects different networks and forwards traffic using IP addresses.</li>
+                        <li><strong>Switch:</strong> Connects devices within a network and primarily uses MAC addresses for forwarding.</li>
+                    </ul>
+                `,
+            },
+
+            {
+              question: "What is Wireshark?",
+
+              answer: `
+                    <ul>
+                        <li>Wireshark is a network protocol analyzer.</li>
+                        <li>It captures and analyzes network packets.</li>
+                        <li>Security analysts can use it to troubleshoot network issues and investigate suspicious traffic.</li>
+                        <li>It supports analysis of protocols such as TCP, UDP, DNS, HTTP and many others.</li>
+                    </ul>
+                `,
+            },
+          ],
+        },
+
+        /* PART 3 */
+
+        {
+          id: "part3",
+          title: "Part 3 – Microsoft Defender for Endpoint (MDE)",
+          description: "MDE concepts and security capabilities",
+
+          questions: [
+            {
+              question: "What is Microsoft Defender for Endpoint?",
+
+              answer: `
+                    <ul>
+                        <li>Microsoft Defender for Endpoint is an endpoint security solution from Microsoft.</li>
+                        <li>It protects endpoints such as Windows, macOS, Linux and supported mobile platforms.</li>
+                        <li>It provides <strong>EDR</strong>, threat detection, investigation and response capabilities.</li>
+                        <li>It helps security teams detect, investigate and respond to endpoint threats.</li>
+                    </ul>
+                `,
+            },
+
+            {
+              question: "What is EDR and why is it important?",
+
+              answer: `
+                    <ul>
+                        <li>EDR stands for <strong>Endpoint Detection and Response</strong>.</li>
+                        <li>It continuously monitors endpoint activity.</li>
+                        <li>It collects telemetry such as processes, files, network activity and user activity.</li>
+                        <li>It helps security analysts detect suspicious behavior and investigate incidents.</li>
+                        <li>It also provides response capabilities such as device isolation.</li>
+                    </ul>
+                `,
+            },
+
+            {
+              question: "What is Device Timeline?",
+
+              answer: `
+                    <ul>
+                        <li>Device Timeline provides a chronological view of activities occurring on an endpoint.</li>
+                        <li>It can show processes, files, network connections and other activities.</li>
+                        <li>Security analysts use it to understand what happened before, during and after an alert.</li>
+                    </ul>
+                `,
+            },
+
+            {
+              question: "What is Process Tree?",
+
+              answer: `
+                    <ul>
+                        <li>Process Tree shows the relationship between parent and child processes.</li>
+                        <li>It helps analysts understand how a suspicious process was started.</li>
+                        <li>It is useful for detecting suspicious execution chains and attack behavior.</li>
+                    </ul>
+                `,
+            },
+
+            {
+              question: "What is Device Isolation?",
+
+              answer: `
+                    <ul>
+                        <li>Device Isolation is an MDE response action used to contain a compromised endpoint.</li>
+                        <li>It restricts the device's network communication to help prevent further spread or attacker communication.</li>
+                        <li>The device can still communicate with required Defender services so investigation and remediation can continue.</li>
+                    </ul>
+                `,
+            },
+
+            {
+              question: "What is ASR – Attack Surface Reduction?",
+
+              answer: `
+                    <ul>
+                        <li>ASR stands for <strong>Attack Surface Reduction</strong>.</li>
+                        <li>ASR rules help reduce common attack techniques used by malware and attackers.</li>
+                        <li>Examples include blocking suspicious Office child processes and risky script behavior.</li>
+                        <li>Policies should be tested and fine-tuned before broad enforcement.</li>
+                    </ul>
+                `,
+            },
+
+            {
+              question:
+                "What is AIR – Automated Investigation and Remediation?",
+
+              answer: `
+                    <ul>
+                        <li>AIR stands for <strong>Automated Investigation and Remediation</strong>.</li>
+                        <li>It automatically investigates certain alerts and identifies potentially malicious activities.</li>
+                        <li>It can recommend or perform remediation actions depending on configuration and permissions.</li>
+                        <li>It helps reduce manual investigation effort and improve response time.</li>
+                    </ul>
+                `,
+            },
+
+            {
+              question: "What is a False Positive?",
+
+              answer: `
+                    <ul>
+                        <li>A false positive occurs when a security solution identifies legitimate activity as suspicious or malicious.</li>
+                        <li>Example: A legitimate business application is detected as potentially malicious.</li>
+                        <li>False positives should be investigated and controlled through appropriate policy fine-tuning.</li>
+                    </ul>
+                `,
+            },
+
+            {
+              question: "What is Fine-Tuning in MDE?",
+
+              answer: `
+                    <ul>
+                        <li>Fine-tuning means adjusting security policies or controls based on investigation results.</li>
+                        <li>First, I investigate the alert and determine whether the activity is legitimate or malicious.</li>
+                        <li>If legitimate, I make the minimum required approved change.</li>
+                        <li>I avoid broad exclusions and continuously monitor the result.</li>
+                    </ul>
+                `,
+            },
+
+          ],
+        },
+
+        /* PART 4 */
+
+        {
+          id: "part4",
+          title: "Part 4 – MDE Agent & Endpoint Operations and Report",
+          description:
+            "Practical MDE agent and endpoint operational experience",
+
+          questions: [
+            
+            {
+              question: "What is your daily MDE operational activities?",
+
+              answer: `
+                    <ul>
+                        <li>Check the health of onboarded devices.</li>
+                        <li>Review new security alerts and incidents.</li>
+                        <li>Prioritize alerts based on severity and business impact.</li>
+                        <li>Investigate suspicious activities.</li>
+                        <li>Review Device Timeline, Process Tree, file and network information.</li>
+                        <li>Monitor endpoint health and sensor status.</li>
+                        <li>MDE onboarding troubleshooting.</li>
+                        <li>Review security recommendations and vulnerabilities.</li>
+                        <li>Monitor false positives and fine-tune policies when required.</li>
+                        <li>Prepare reports and escalate critical incidents.</li>
+                    </ul>
+                `,
+            },
+
+            {
+              question:
+                "How do you generate reports in Microsoft Defender for Endpoint?",
+
+              answer: `
+                    <ul>
+                        <li>Open the Microsoft Defender Portal.</li>
+                        <li>Review security incidents, alerts, device health and exposure information.</li>
+                        <li>Use available reports and dashboards based on the reporting requirement.</li>
+                        <li>Export relevant information when required.</li>
+                        <li>Prepare reports containing items such as incident count, severity, device health, remediation status and trends.</li>
+                    </ul>
+                `,
+            },
+
+            {
+              question: "Have you worked on MDE Agent Installation/Onboarding?",
+
+              answer: `
+                    <ul>
+                        <li>Yes, I have worked with MDE endpoint onboarding.</li>
+                        <li>For a single Windows device, I can use the Local Script onboarding method.</li>
+                        <li>For managed enterprise devices, onboarding can be performed using Microsoft Intune.</li>
+                        <li>After onboarding, I verify the device in the Defender Portal.</li>
+                        <li>I check device health, sensor status, last seen and telemetry.</li>
+                    </ul>
+                `,
+            },
+
+            {
+              question:
+                "How do you troubleshoot MDE Agent Installation or Onboarding issues?",
+
+              answer: `
+                    <ul>
+                        <li>Check whether the device meets the onboarding prerequisites.</li>
+                        <li>Check network and Internet connectivity.</li>
+                        <li>Check proxy and firewall configuration.</li>
+                        <li>Verify the MDE sensor/service status.</li>
+                        <li>Verify that the onboarding policy or script was applied correctly.</li>
+                        <li>Review available logs and error information.</li>
+                        <li>Fix the issue and verify communication with the Defender Portal.</li>
+                    </ul>
+                `,
+            },
+
+            {
+              question: "What is Whitelisting in MDE?",
+
+              answer: `
+                    <ul>
+                        <li>Whitelisting means allowing a known and trusted application, file or activity that would otherwise be blocked or detected.</li>
+                        <li>In MDE, this should be handled through appropriate exclusions or policy configuration.</li>
+                        <li>Whitelisting should be specific, justified, approved and regularly reviewed.</li>
+                    </ul>
+                `,
+            },
+
+            {
+              question: "How do you handle a Whitelisting request?",
+
+              answer: `
+                    <ol>
+                        <li>Understand why the application or file needs to be whitelisted.</li>
+                        <li>Verify that it is legitimate and business-approved.</li>
+                        <li>Investigate file details, hash, publisher and behavior.</li>
+                        <li>Check whether the detection is a false positive.</li>
+                        <li>Follow the organization's approval process.</li>
+                        <li>Apply the minimum required and specific exclusion.</li>
+                        <li>Monitor the result after the change.</li>
+                    </ol>
+                `,
+            },
+
+            {
+              question: "How do you reduce False Positives in MDE?",
+
+              answer: `
+                    <ul>
+                        <li>Identify recurring false-positive alerts.</li>
+                        <li>Investigate the activity and determine the root cause.</li>
+                        <li>Validate the application, file or activity.</li>
+                        <li>Fine-tune the policy based on investigation results.</li>
+                        <li>Use specific and controlled exclusions when approved.</li>
+                        <li>Avoid broad exclusions.</li>
+                        <li>Monitor the environment after changes.</li>
+                    </ul>
+                `,
+            },
+          ],
+        },
+
+        /* PART 5 */
+
+        {
+          id: "part5",
+          title: "Part 5 – MDE Deployment & Policy Management",
+          description:
+            "MDE deployment, onboarding and security policy management",
+
+          questions: [
+            {
+              question:
+                "How would you deploy Microsoft Defender for Endpoint on 25,000 devices?",
+
+              answer: `
+                    <ol>
+                        <li>First, I will understand environment.</li>
+                        <li>Check supported operating systems.</li>
+                        <li>Verify network, proxy and firewall connectivity.</li>
+                        <li>Identify existing antivirus/security solutions.</li>
+                        <li>Select the appropriate onboarding method such as Intune or Configuration Manager.</li>
+                        <li>Start with a small pilot group containing small number of device around 100.</li>
+                        <li>and then Validate onboarding, sensor health, alerts and policy impact.</li>
+                        <li>Deploy in phases instead of onboarding all 25,000 devices at once.</li>
+                        <li>Continuously monitor onboarding failures, false positives and device health.</li>
+                    </ol>
+
+                    <div class="alert alert-success">
+                        <strong>Easy:</strong>
+                        Assessment → Preparation → Pilot → Validate → Phased Rollout → Monitor
+                    </div>
+                `,
+            },
+
+            {
+              question: "What challenges can occur during Defender deployment?",
+
+              answer: `
+                    <ul>
+                        <li>Network connectivity issues.</li>
+                        <li>Proxy or firewall configuration problems.</li>
+                        <li>Unsupported operating systems or missing prerequisites.</li>
+                        <li>Third-party antivirus or any security software conflicts.</li>
+                        <li>Onboarding policy or script failures.</li>
+                        <li>Too many alerts and false positives.</li>
+                        <li>Legitimate applications being blocked.</li>
+                        <li>Business disruption due to aggressive security policies.</li>
+                    </ul>
+
+                    <p>
+                        I would address these through pilot deployment, phased rollout, monitoring and
+                        policy fine-tuning.
+                    </p>
+                `,
+            },
+
+            {
+              question:
+                "Microsoft Defender for Endpoint using Intune on a device?",
+
+              answer: `
+                    <ol>
+                        <li>Log in to <strong>Microsoft Intune Admin Center</strong>.</li>
+                        <li>Go to <strong>Endpoint security → Microsoft Defender for Endpoint</strong>.</li>
+                        <li>Connect/enable the <strong>Microsoft Defender for Endpoint connector</strong> with Intune.</li>
+                        <li>Go to <strong>Endpoint security → Antivirus</strong>.</li>
+                        <li>Create a Microsoft Defender Antivirus policy if required.</li>
+                        <li>Configure the <strong>EDR onboarding policy</strong>.</li>
+                        <li>Select Windows 10, Windows 11 and Server as applicable.</li>
+                        <li>Assign the policy to the test device/user group.</li>
+                        <li>Sync the target laptop with Intune.</li>
+                        <li>Intune applies the MDE onboarding policy.</li>
+                        <li>The MDE sensor starts communicating with the Microsoft Defender cloud.</li>
+                        <li>Open <strong>Microsoft Defender Portal → Assets → Devices</strong>.</li>
+                        <li>Verify the laptop appears in the portal.</li>
+                        <li>Check Device Health, Last Seen, Risk Level and Sensor Health.</li>
+                        <li>Confirm telemetry and security alerts are reaching the portal.</li>
+                    </ol>
+                `,
+            },
+
+            {
+              question:
+                "Onboard a single Windows laptop using the Local Script method?",
+
+              answer: `
+                    <ol>
+                        <li>Log in to the <strong>Microsoft Defender Portal</strong>.</li>
+                        <li>Go to <strong>Settings → Endpoints → Onboarding</strong>.</li>
+                        <li>Select <strong>Windows</strong>.</li>
+                        <li>Select <strong>Local Script</strong> as the onboarding method.</li>
+                        <li>Download the onboarding package/script.</li>
+                        <li>Copy the script to the target laptop.</li>
+                        <li>Run the script with <strong>Administrator privileges</strong>.</li>
+                        <li>The MDE sensor starts communicating with the Microsoft Defender cloud.</li>
+                        <li>Verify that the <strong>Microsoft Defender for Endpoint Sensor (Sense)</strong> service is running.</li>
+                        <li>Check whether the device appears in the Defender Portal.</li>
+                        <li>Verify Device Health, Last Seen and sensor status.</li>
+                        <li>Perform a test detection to confirm telemetry and alerts.</li>
+                        <li>Once verified, the endpoint is successfully onboarded.</li>
+                    </ol>
+                `,
+            },
+
+            {
+              question:
+                "How would you design and implement MDE security policies?",
+
+              answer: `
+                    <ol>
+                        <li>Understand the organization's security and business requirements.</li>
+                        <li>Identify endpoints and create appropriate device groups.</li>
+                        <li>Define required controls such as Antivirus, ASR, Firewall, Web Protection and Device Control.</li>
+                        <li>Start with a pilot/test group.</li>
+                        <li>Use appropriate monitoring or audit approaches where required.</li>
+                        <li>Monitor alerts, false positives and business impact.</li>
+                        <li>Fine-tune the policies based on results.</li>
+                        <li>Get required approval.</li>
+                        <li>Gradually move the policy into broader enforcement.</li>
+                        <li>Continuously monitor policy effectiveness.</li>
+                    </ol>
+                `,
+            },
+
+            {
+              question: "What is your approach to MDE policy Fine-Tuning?",
+
+              answer: `
+                    <ol>
+                        <li>Identify policies generating excessive alerts or business impact.</li>
+                        <li>Investigate the alerts and understand the root cause.</li>
+                        <li>Analyze Device Timeline, Process Tree, file information, network activity and user context.</li>
+                        <li>Determine whether the activity is malicious or legitimate.</li>
+                        <li>If legitimate, make the minimum required policy adjustment.</li>
+                        <li>Use specific and controlled exclusions when required and approved.</li>
+                        <li>Monitor the results after the change.</li>
+                        <li>Ensure security protection is maintained.</li>
+                    </ol>
+                `,
+            },
+          ],
+        },
+
+        /* PART 6 */
+
+        {
+          id: "part6",
+          title: "Part 6 – Microsoft Purview & DLP",
+          description:
+            "Microsoft Purview, Data Loss Prevention and data security",
+
+          questions: [
+            {
+              question: "What is Microsoft Purview?",
+
+              answer: `
+                    <ul>
+                        <li>Microsoft Purview is a Microsoft solution for managing and protecting organizational data.</li>
+                        <li>It provides capabilities for data security, governance, classification, DLP and compliance.</li>
+                        <li>It helps organizations understand where sensitive data exists and how it is being used.</li>
+                        <li>It helps protect data across supported Microsoft 365, endpoint and cloud environments.</li>
+                    </ul>
+                `,
+            },
+
+            {
+              question: "What is Data Loss Prevention (DLP)?",
+
+              answer: `
+                    <ul>
+                        <li>DLP stands for <strong>Data Loss Prevention</strong>.</li>
+                        <li>It helps prevent sensitive information from being accidentally or intentionally shared or exposed.</li>
+                        <li>It can identify sensitive information such as personal, financial and confidential business data.</li>
+                        <li>DLP can monitor activities such as email sharing, file sharing, copying, printing and supported web/data transfers.</li>
+                        <li>Depending on the policy, DLP can monitor, warn, block or generate alerts.</li>
+                    </ul>
+                `,
+            },
+
+            {
+              question: "What is Simulation Mode in Purview DLP?",
+
+              answer: `
+                    <ul>
+                        <li>Simulation Mode allows us to test a DLP policy before enforcing it.</li>
+                        <li>It helps understand how many users and activities may be affected.</li>
+                        <li>It helps identify false positives and potential business impact.</li>
+                        <li>Based on the results, we can fine-tune the policy.</li>
+                        <li>After validation and approval, the policy can move to enforcement.</li>
+                    </ul>
+                `,
+            },
+
+            {
+              question: "How do you investigate a DLP Alert?",
+
+              answer: `
+                    <ol>
+                        <li>Open the DLP alert and review the details.</li>
+                        <li>Check the user involved.</li>
+                        <li>Check the device and file/data involved.</li>
+                        <li>Identify the sensitive information type.</li>
+                        <li>Check the DLP policy and rule triggered.</li>
+                        <li>Review the activity and destination.</li>
+                        <li>Determine whether the activity was authorized business activity.</li>
+                        <li>Coordinate with the data owner or relevant team when required.</li>
+                        <li>Take remediation or escalation action for genuine violations.</li>
+                        <li>Document the investigation and outcome.</li>
+                    </ol>
+                `,
+            },
+
+            {
+              question:
+                "How would you implement Microsoft Purview DLP in an organization?",
+
+              answer: `
+                    <ol>
+                        <li>Understand the organization's data security and compliance requirements.</li>
+                        <li>Identify sensitive data and where it exists.</li>
+                        <li>Identify who can access and share the data.</li>
+                        <li>Identify appropriate Sensitive Information Types and classification requirements.</li>
+                        <li>Create DLP policies with conditions, exceptions and actions.</li>
+                        <li>Start with Simulation/Test mode.</li>
+                        <li>Analyze simulation results and identify false positives.</li>
+                        <li>Fine-tune the policy.</li>
+                        <li>Get required approval.</li>
+                        <li>Move the policy to enforcement.</li>
+                        <li>Continuously monitor alerts and policy effectiveness.</li>
+                    </ol>
+                `,
+            },
+
+            {
+              question:
+                "What operational activities do you perform after implementing Purview DLP?",
+
+              answer: `
+                    <ul>
+                        <li>Monitor DLP alerts and incidents.</li>
+                        <li>Perform DLP alert triage.</li>
+                        <li>Investigate users, files, sensitive data and activities.</li>
+                        <li>Identify and investigate false positives.</li>
+                        <li>Fine-tune DLP policies.</li>
+                        <li>Handle approved policy exceptions.</li>
+                        <li>Monitor sensitive data sharing activities.</li>
+                        <li>Coordinate with IT, Security, Compliance and Data Owners.</li>
+                        <li>Escalate high-risk data security incidents.</li>
+                        <li>Maintain investigation and remediation records.</li>
+                        <li>Prepare DLP reports.</li>
+                        <li>Periodically review policies.</li>
+                    </ul>
+                `,
+            },
+          ],
+        },
+        
+
+        /* PART 7 */
+
+        {
+          id: "part7",
+          title: "Part 7 – Incident Response & Scenario-Based Questions",
+          description:
+            "Important L1/L2 incident response and scenario-based questions",
+
+          questions: [
+            {
+              question:
+                "How do you investigate an incident from start to finish and what actions do you take?",
+
+              answer: `
+                    <ol>
+                        <li>Receive and identify the incident.</li>
+                        <li>Perform alert triage based on severity and business impact.</li>
+                        <li>Investigate using Device Timeline, Process Tree, file information and network activity.</li>
+                        <li>Determine the root cause.</li>
+                        <li>Contain the threat when required.</li>
+                        <li>Remediate the affected endpoint or system.</li>
+                        <li>Verify that the threat is removed.</li>
+                        <li>Monitor for recurrence.</li>
+                        <li>Document the investigation and final outcome.</li>
+                        <li>Close or escalate the incident according to the process.</li>
+                    </ol>
+
+                    <div class="alert alert-success">
+                        Alert → Triage → Investigate → Root Cause → Contain →
+                        Remediate → Verify → Document → Close
+                    </div>
+                `,
+            },
+
+            {
+              question: "Tell me about an incident you investigated.",
+
+              answer: `
+                    <ol>
+                        <li>I received a security alert from Microsoft Defender for Endpoint.</li>
+                        <li>I performed alert triage by checking severity, affected device, user and detection details.</li>
+                        <li>I investigated the activity using Device Timeline, Process Tree, file information and network activity.</li>
+                        <li>I identified the suspicious process/file and checked related activities.</li>
+                        <li>I determined whether the activity was malicious or legitimate.</li>
+                        <li>For a confirmed compromise, I would follow the containment process and escalate based on severity.</li>
+                        <li>I coordinated with the IT/endpoint team for remediation.</li>
+                        <li>I verified the endpoint was healthy and documented the incident.</li>
+                    </ol>
+                `,
+            },
+
+            {
+              question:
+                "If a Malware or Ransomware alert is generated, what will you do?",
+
+              answer: `
+                    <ol>
+                        <li>Immediately perform alert triage.</li>
+                        <li>Check severity and affected endpoint.</li>
+                        <li>Investigate Device Timeline, Process Tree, file and network activity.</li>
+                        <li>Look for suspicious process execution and ransomware indicators.</li>
+                        <li>Check whether other devices or users are affected.</li>
+                        <li>If confirmed or strongly suspected, isolate the endpoint according to the response procedure.</li>
+                        <li>Escalate the incident based on severity.</li>
+                        <li>Coordinate with IT/endpoint teams for remediation and recovery.</li>
+                        <li>Verify the endpoint is clean and healthy.</li>
+                        <li>Document the incident and actions taken.</li>
+                    </ol>
+                `,
+            },
+
+            {
+              question:
+                "A legitimate application is blocked by MDE. What will you do?",
+
+              answer: `
+                    <ol>
+                        <li>Verify that the application is legitimate and business-approved.</li>
+                        <li>Investigate the MDE detection.</li>
+                        <li>Check Device Timeline and Process Tree.</li>
+                        <li>Check file information, hash and publisher.</li>
+                        <li>Confirm whether it is a false positive.</li>
+                        <li>Follow the organization's approval process.</li>
+                        <li>Apply the minimum required and specific policy adjustment or exclusion.</li>
+                        <li>Verify the application works after the change.</li>
+                        <li>Monitor the endpoint.</li>
+                    </ol>
+                `,
+            },
+
+            {
+              question:
+                "A DLP policy blocks a business-critical file. What will you do?",
+
+              answer: `
+                    <ol>
+                        <li>Review the DLP alert.</li>
+                        <li>Identify the user, file, policy, rule and activity.</li>
+                        <li>Verify whether the file contains sensitive information.</li>
+                        <li>Understand the business requirement.</li>
+                        <li>Verify whether the activity is authorized.</li>
+                        <li>Follow the exception/approval process if the activity is legitimate.</li>
+                        <li>Fine-tune the policy or apply a controlled exception if approved.</li>
+                        <li>Monitor the activity after the change.</li>
+                    </ol>
+                `,
+            },
+
+            {
+              question:
+                "How do you reduce False Positives after deploying a security policy?",
+
+              answer: `
+                    <ol>
+                        <li>Identify recurring false-positive alerts.</li>
+                        <li>Investigate the alerts and understand the root cause.</li>
+                        <li>Validate the application, file or activity.</li>
+                        <li>Check the business context.</li>
+                        <li>Fine-tune the policy based on investigation results.</li>
+                        <li>Apply specific approved exceptions when required.</li>
+                        <li>Avoid broad exclusions.</li>
+                        <li>Monitor the environment after the change.</li>
+                    </ol>
+                `,
+            },
+
+            {
+              question:
+                "What will you do if an MDE Agent is not communicating with the Defender Portal?",
+
+              answer: `
+                    <ol>
+                        <li>Check the device's Last Seen status.</li>
+                        <li>Check network connectivity.</li>
+                        <li>Check proxy and firewall configuration.</li>
+                        <li>Verify the MDE sensor/service is running.</li>
+                        <li>Verify that the device is correctly onboarded.</li>
+                        <li>Review available logs and error information.</li>
+                        <li>Troubleshoot the issue or coordinate with the IT/Network team.</li>
+                        <li>Verify communication and telemetry after remediation.</li>
+                    </ol>
+                `,
+            },
+
+            {
+              question:
+                "What will you do if an endpoint shows unhealthy in MDE?",
+
+              answer: `
+                    <ol>
+                        <li>Identify the affected device.</li>
+                        <li>Check Device Health information.</li>
+                        <li>Check Last Seen and sensor health.</li>
+                        <li>Verify network connectivity.</li>
+                        <li>Verify the MDE sensor/service.</li>
+                        <li>Check onboarding and configuration.</li>
+                        <li>Review available health information and logs.</li>
+                        <li>Troubleshoot the root cause.</li>
+                        <li>Coordinate with the IT/endpoint team when required.</li>
+                        <li>Verify that the device returns to a healthy state.</li>
+                    </ol>
+                `,
+            },
+          ],
+        },
 
 
-            const partHTML = `
+        /* PART 8 */
+
+        {
+          id: "part8",
+          title: "Part 8 – Microsoft Defender XDR",
+          description: "Microsoft Defender XDR and security monitoring",
+
+          questions: [
+            {
+              question: "What is Microsoft Defender XDR?",
+
+              answer: `
+                    <ul>
+                        <li>Microsoft Defender XDR is a unified security solution from Microsoft.</li>
+                        <li>It helps detect, investigate and respond to threats across multiple security areas.</li>
+                        <li>It provides visibility across Endpoint, Identity, Email and Cloud Apps.</li>
+                        <li>It correlates security signals and related alerts into incidents.</li>
+                        <li>It helps security analysts understand the broader attack chain.</li>
+                    </ul>
+                `,
+            },
+
+            {
+              question: "What is the difference between MDE and XDR?",
+
+              answer: `
+                    <ul>
+                        <li><strong>MDE:</strong> Mainly focuses on endpoint security and provides EDR capabilities.</li>
+                        <li><strong>XDR:</strong> Correlates security signals across multiple domains such as Endpoint, Identity, Email and Cloud Apps.</li>
+                    </ul>
+
+                    <table class="table table-bordered mt-3">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>MDE</th>
+                                <th>XDR</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Endpoint-focused</td>
+                                <td>Cross-domain security</td>
+                            </tr>
+                            <tr>
+                                <td>Provides EDR</td>
+                                <td>Correlates multiple security signals</td>
+                            </tr>
+                            <tr>
+                                <td>Investigates endpoint activity</td>
+                                <td>Investigates broader attack scenarios</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                `,
+            },
+
+            {
+              question: "What is Alert Triage and Security Monitoring?",
+
+              answer: `
+                    <ul>
+                        <li><strong>Security Monitoring:</strong> Continuously monitoring security alerts, incidents, devices and security signals.</li>
+                        <li><strong>Alert Triage:</strong> Reviewing and prioritizing alerts to determine which require investigation.</li>
+                        <li>Check alert severity, affected device, user, threat details and business impact.</li>
+                        <li>Investigate suspicious alerts using Device Timeline, Process Tree, file and network information.</li>
+                        <li>Classify the alert as True Positive, False Positive or requiring further investigation.</li>
+                        <li>Respond or escalate based on the incident severity.</li>
+                        <li>Document the investigation and final outcome.</li>
+                    </ul>
+
+                    <div class="alert alert-success">
+                        Monitor → Triage → Investigate → Classify → Respond/Escalate → Document
+                    </div>
+                `,
+            },
+          ],
+        },
+      ];
+
+      /*
+============================================================
+GENERATE HTML DYNAMICALLY
+============================================================
+*/
+
+const partsAccordion = document.getElementById("partsAccordion");
+
+let questionNumber = 1;
+
+
+interviewParts.forEach((part) => {
+
+    const partId = part.id;
+
+    let questionsHTML = "";
+
+
+    part.questions.forEach((item, questionIndex) => {
+
+        const questionId =
+            `${partId}-question-${questionIndex}`;
+
+        questionsHTML += `
+
+            <div class="accordion-item">
+
+                <h2 class="accordion-header">
+
+                    <button
+                        class="accordion-button collapsed question-button p-2"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#${questionId}"
+                        aria-expanded="false"
+                        aria-controls="${questionId}">
+
+                        <span class="question-number me-2">
+                            ${questionNumber}.
+                        </span>
+
+                        ${item.question}
+
+                    </button>
+
+                </h2>
+
 
                 <div
-                    class="accordion-item mb-3"
-                    data-part="${partId}">
+                    id="${questionId}"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#${partId}-questions">
 
-                    <h2 class="accordion-header">
+                    <div class="accordion-body question-answer">
 
-                        <button
-                            class="accordion-button collapsed part-header p-2"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#${partId}-collapse"
-                            aria-expanded="false"
-                            aria-controls="${partId}-collapse">
-
-                            ${part.title}
-
-                        </button>
-
-                    </h2>
-
-
-                    <div
-                        id="${partId}-collapse"
-                        class="accordion-collapse collapse"
-                        data-bs-parent="#partsAccordion">
-
-                        <div class="accordion-body">
-
-                            <p class="part-description mb-3">
-                                ${part.description}
-                            </p>
-
-
-                            <div
-                                class="accordion"
-                                id="${partId}-questions">
-
-                                ${questionsHTML}
-
-                            </div>
-
-                        </div>
+                        ${item.answer}
 
                     </div>
 
                 </div>
 
-            `;
+            </div>
+
+        `;
+
+        questionNumber++;
+
+    });
 
 
-            partsAccordion.innerHTML += partHTML;
+    const partHTML = `
 
-        });
+        <div
+            class="accordion-item mb-3"
+            data-part="${partId}">
+
+            <h2 class="accordion-header">
+
+                <button
+                    class="accordion-button collapsed part-header p-2"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#${partId}-collapse"
+                    aria-expanded="false"
+                    aria-controls="${partId}-collapse">
+
+                    ${part.title}
+
+                </button>
+
+            </h2>
 
 
+            <div
+                id="${partId}-collapse"
+                class="accordion-collapse collapse"
+                data-bs-parent="#partsAccordion">
+
+                <div class="accordion-body">
+
+
+                    <div
+                        class="accordion"
+                        id="${partId}-questions">
+
+                        ${questionsHTML}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    `;
+
+
+    partsAccordion.innerHTML += partHTML;
+
+});
     </script>
-
-</body>
-
+  </body>
 </html>
