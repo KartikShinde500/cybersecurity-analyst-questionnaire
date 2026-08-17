@@ -662,7 +662,7 @@
         {
           id: "part4",
           title:
-            "Part 4 – MDE Agent & Endpoint Operations and Report generation and Issue faced",
+            "Part 4 – Endpoint Operations and Report generation and Issue faced & MDE Agent troubleshoot",
           description:
             "Practical MDE agent and endpoint operational experience",
 
@@ -670,14 +670,15 @@
             {
               question: "What is your daily MDE operational activities?",
 
+              status: "done",
+
               answer: `
                     <ul>
-                        <li>Check the health of onboarded devices.</li>
-                        <li>Review new security alerts and incidents.</li>
+                        <li>Monitor onboarded endpoint health and sensor status.</li>
+                        <li>Monitor new security alerts and incidents.</li>
                         <li>Prioritize alerts based on severity and business impact.</li>
                         <li>Investigate suspicious activities.</li>
                         <li>Use Device Timeline, Process Tree, file and network information.</li>
-                        <li>Monitor endpoint health and sensor status.</li>
                         <li>Troubleshoot agent installation and onboarding issues.</li>
                         <li>Monitor false positives and fine-tune policies when required.</li>
                         <li>Prepare reports and escalate critical incidents.</li>
@@ -687,7 +688,9 @@
 
             {
               question:
-                "What issues have you faced while working with Microsoft Defender for Endpoint and how did you handle them?",
+                "What issues you faced while working with Microsoft Defender for Endpoint and how did you handle them?",
+              
+              status:"done",
 
               answer: `
                     <ul>
@@ -719,7 +722,7 @@
 
             {
               question:
-                "How do you generate reports in Microsoft Defender for Endpoint?",
+                "How to generate reports in Microsoft Defender for Endpoint?",
 
               answer: `
                     <ul>
@@ -733,7 +736,7 @@
             },
 
             {
-              question: "How do you prepare a report for security incidents?",
+              question: "Prepared report for security incidents?",
 
               answer: `
                   <div class="alert alert-success">
@@ -747,6 +750,7 @@
 
             {
               question: "Have you worked on MDE Agent Installation/Onboarding?",
+              status:"done",
 
               answer: `
                     <ul>
@@ -904,6 +908,8 @@
             {
               question:
                 "Onboard a single Windows laptop using the Local Script method?",
+              status:"done",
+              // status:"revision",
 
               answer: `
                     <ol>
@@ -924,6 +930,8 @@
             {
               question:
                 "How would you design and implement MDE security policies?",
+
+              status:"revision",
 
               answer: `
                     <ol>
@@ -1318,6 +1326,7 @@
           ],
         },
 
+        /* PART 9*/
         {
           id: "part9",
           title: "Part 9 – HR & Behavioral Questions",
@@ -1577,49 +1586,67 @@ GENERATE HTML DYNAMICALLY
         let questionsHTML = "";
 
         part.questions.forEach((item, questionIndex) => {
+          let statusBadge = "";
+
+          if (item.status === "done") {
+            statusBadge = `
+              <span class="badge bg-success ms-2">
+                  Done
+              </span>
+          `;
+          } else if (item.status === "revision") {
+            statusBadge = `
+              <span class="badge bg-warning text-dark ms-2">
+                  Need Revision
+              </span>
+          `;
+          }
+
           const questionId = `${partId}-question-${questionIndex}`;
 
           questionsHTML += `
 
             <div class="accordion-item">
-
+            
                 <h2 class="accordion-header">
-
+                
                     <button
                         class="accordion-button collapsed question-button p-2"
                         type="button"
                         data-bs-toggle="collapse"
-                        data-bs-target="#${questionId}"
-                        aria-expanded="false"
-                        aria-controls="${questionId}">
-
+                        data-bs-target="#${questionId}">
+                
                         <span class="question-number me-2">
                             ${questionNumber}.
                         </span>
-
-                        ${item.question}
-
+                      
+                        <span class="">
+                            ${item.question}
+                        </span>
+                      
+                        ${statusBadge}
+                      
                     </button>
-
+                  
                 </h2>
-
-
+              
+              
                 <div
                     id="${questionId}"
                     class="accordion-collapse collapse"
                     data-bs-parent="#${partId}-questions">
-
+              
                     <div class="accordion-body question-answer">
-
+                    
                         ${item.answer}
-
+                    
                     </div>
-
+                  
                 </div>
-
+              
             </div>
-
-        `;
+            
+            `;
 
           questionNumber++;
         });
@@ -1640,7 +1667,7 @@ GENERATE HTML DYNAMICALLY
                     aria-expanded="false"
                     aria-controls="${partId}-collapse">
 
-                    <span>
+                    <span class="flex-grow-1">
                         ${part.title}
                     </span>
                 
