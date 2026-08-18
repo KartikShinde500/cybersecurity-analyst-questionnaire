@@ -244,7 +244,7 @@
           questions: [
             {
               question: "Tell me about yourself.",
-
+              status:"done",
               answer: `
                     <ul>
                         <li>My name is Kartik Shinde and I am from Pune.</li>
@@ -261,6 +261,8 @@
               question:
                 "What are the roles and responsibilities of a Security Analyst?",
 
+              status:"done",
+
               answer: `
                     <ul>
                         <li>Monitor security alerts and incidents.</li>
@@ -269,8 +271,8 @@
                         <li>Use Device Timeline and Process Tree for investigation.</li>
                         <li>Analyze file information and network activity.</li>
                         <li>Monitor MDE agent/device health.</li>
+                        <li>Agent installation and onboarding.</li>
                         <li>Troubleshoot agent installation and onboarding issues.</li>
-                        <li>Perform approved whitelisting/exclusions when required.</li>
                         <li>Fine-tune security policies.</li>
                         <li>Escalate critical incidents.</li>
                         <li>Prepare daily/weekly security reports.</li>
@@ -281,10 +283,11 @@
 
             {
               question: "What is a Security Incident?",
+              status:"done",
 
               answer: `
                     <ol>
-                        <li>A security incident is a <strong>security event that has actual or potential security impact</strong>.</li>
+                        <li>A security incident is a security event that has actual or potential security impact.</li>
                         <li>It can affect:
                             <ul>
                                 <li>Confidentiality</li>
@@ -307,41 +310,34 @@
 
             {
               question: "What is the CIA Triad?",
+              status:"done",
 
               answer: `
                     <ul>
-                        <li><strong>Confidentiality:</strong> Ensures that information is accessible only to authorized users.</li>
-                        <li><strong>Integrity:</strong> Ensures that data is accurate and has not been modified without authorization.</li>
-                        <li><strong>Availability:</strong> Ensures that systems and data are available when required.</li>
+                        <li>Confidentiality: Ensures that information is accessible only to authorized users.</li>
+                        <li>Integrity: Ensures that data is accurate and has not been modified without authorization.</li>
+                        <li>Availability: Ensures that systems and data are available when required.</li>
                     </ul>
-
-                    <div class="alert alert-success mt-3">
-                        <strong>Easy way to remember:</strong>
-                        Confidentiality = Who can access →
-                        Integrity = Data is correct →
-                        Availability = Data is available
-                    </div>
                 `,
             },
 
             {
               question:
                 "What is the difference between Threat, Vulnerability and Risk?",
+              status:"done",
 
               answer: `
                     <ul>
-                        <li><strong>Threat:</strong> Anything that can potentially cause harm to a system or organization.</li>
-                        <li><strong>Vulnerability:</strong> A weakness that can be exploited by a threat.</li>
-                        <li><strong>Risk:</strong> The potential impact or loss when a threat exploits a vulnerability.</li>
+                        <li>Threat: Anything that can potentially cause harm to a system or organization.</li>
+                        <li>Vulnerability: A weakness that can be exploited by a threat.</li>
+                        <li>Risk: The potential impact or loss when a threat exploits a vulnerability.</li>
                     </ul>
-
-                    <div class="alert alert-info mt-3">
-                        <strong>Example:</strong><br>
-                        Vulnerability = Unpatched software<br>
-                        Threat = Attacker<br>
-                        Risk = System compromise or data loss
-                    </div>
                 `,
+            },
+
+            {
+              question:"Phishing Attack?",
+              answer:`Phishing is a social engineering attack used to trick users into revealing sensitive information or performing a malicious action.`
             },
 
             {
@@ -350,10 +346,10 @@
 
               answer: `
                     <ul>
-                        <li><strong>Virus:</strong> Malicious code that attaches itself to a file or program and usually requires user execution to spread.</li>
-                        <li><strong>Trojan:</strong> Malicious software that pretends to be legitimate software to trick the user.</li>
-                        <li><strong>Worm:</strong> Malware that can self-replicate and spread across systems or networks.</li>
-                        <li><strong>Ransomware:</strong> Malware that encrypts or locks data/systems and demands payment from the victim.</li>
+                        <li>Virus: Malicious code that attaches itself to a file or program and usually requires user execution to spread.</li>
+                        <li>Trojan: Malicious software that pretends to be legitimate software to trick the user.</li>
+                        <li>Worm: Malware that can self-replicate and spread across systems or networks.</li>
+                        <li>Ransomware: Malware that encrypts or locks data/systems and demands payment from the victim.</li>
                     </ul>
                 `,
             },
@@ -386,7 +382,7 @@
 
               answer: `
                     <ul>
-                        <li>A firewall is a security control that monitors and controls network traffic.</li>
+                        <li>A firewall is a security control that monitors and controls incoming and outgoing network traffic.</li>
                         <li>It allows or blocks traffic based on predefined rules.</li>
                         <li>It can control traffic based on IP address, port, protocol and other conditions.</li>
                         <li>It helps prevent unauthorized network access.</li>
@@ -398,16 +394,18 @@
               question: "Explain the OSI Model.",
 
               answer: `
-                    <p>The OSI model has <strong>7 layers</strong>:</p>
-
+                    <ul>
+                      <li>The OSI (Open Systems Interconnection) model used to understand how data is communicated between network devices.</li>
+                      <li>It has 7 layers:</li>
+                    </ul>
                     <ol>
-                        <li><strong>Physical</strong> – Cables, signals and physical transmission.</li>
-                        <li><strong>Data Link</strong> – MAC address and frames.</li>
-                        <li><strong>Network</strong> – IP addressing and routing.</li>
-                        <li><strong>Transport</strong> – TCP and UDP.</li>
-                        <li><strong>Session</strong> – Establishes and manages sessions.</li>
-                        <li><strong>Presentation</strong> – Data formatting, encryption and compression.</li>
-                        <li><strong>Application</strong> – Network services used by applications such as HTTP, DNS and FTP.</li>
+                        <li>Physical – Cables, signals and physical transmission.</li>
+                        <li>Data Link – Handles MAC addressing and frames.</li>
+                        <li>Network – IP addressing and routing.</li>
+                        <li>Transport – TCP and UDP. ensures realability, and fast data delivery.</li>
+                        <li>Session – Establishes and manages sessions.</li>
+                        <li>Presentation – Data formatting, encryption and compression.</li>
+                        <li>Application – Network services used by applications such as HTTP, DNS and FTP.</li>
                     </ol>
                 `,
             },
@@ -417,10 +415,10 @@
 
               answer: `
                     <ul>
-                        <li>TCP stands for <strong>Transmission Control Protocol</strong>.</li>
+                        <li>TCP stands for Transmission Control Protocol.</li>
                         <li>It is a connection-oriented protocol.</li>
                         <li>It provides reliable and ordered delivery of data.</li>
-                        <li>It uses acknowledgements, sequencing and retransmission.</li>
+                        <li>It uses three-way handshake to eastablished transmission and retransmission.</li>
                         <li>Examples include HTTP/HTTPS, SSH and FTP.</li>
                     </ul>
                 `,
@@ -544,12 +542,50 @@
               question: "What is Microsoft Defender for Endpoint?",
 
               answer: `
-                    <ul>
-                        <li>Microsoft Defender for Endpoint is an endpoint security solution from Microsoft.</li>
-                        <li>It protects endpoints such as Windows, macOS, Linux and supported mobile platforms.</li>
-                        <li>It provides <strong>EDR</strong>, threat detection, investigation and response capabilities.</li>
-                        <li>It helps security teams detect, investigate and respond to endpoint threats.</li>
-                    </ul>
+                    <ol class="">
+                        <li class="mb-2">
+                          Microsoft Defender for Endpoint (MDE)
+                          is a cloud-based endpoint security solution from
+                          Microsoft.
+                        </li>
+
+                        <li class="mb-2">
+                          It helps organizations protect endpoints such as:
+                          <ul class="mt-2">
+                            <li>Windows devices</li>
+                            <li>Linux devices</li>
+                            <li>macOS devices</li>
+                            <li>Mobile devices</li>
+                            <li>Servers</li>
+                          </ul>
+                        </li>
+
+                        <li class="mb-2">
+                          MDE provides capabilities such as:
+                          <ul class="mt-2">
+                            <li>Endpoint Detection and Response (EDR)</li>
+                            <li>Threat and vulnerability management</li>
+                            <li>Attack Surface Reduction (ASR)</li>
+                            <li>
+                              Automated Investigation and Remediation (AIR)
+                            </li>
+                            <li>Endpoint protection</li>
+                            <li>Device isolation</li>
+                            <li>Advanced threat detection</li>
+                          </ul>
+                        </li>
+
+                        <li class="mb-2">
+                          Security analysts can investigate incidents using:
+                          <ul class="mt-2">
+                            <li>Device Timeline</li>
+                            <li>Process Tree</li>
+                            <li>Alerts</li>
+                            <li>Advanced Hunting</li>
+                            <li>File and network activity</li>
+                          </ul>
+                        </li>
+                    </ol>
                 `,
             },
 
@@ -558,9 +594,9 @@
 
               answer: `
                     <ul>
-                        <li>EDR stands for <strong>Endpoint Detection and Response</strong>.</li>
+                        <li>EDR stands for Endpoint Detection and Response.</li>
                         <li>It continuously monitors endpoint activity.</li>
-                        <li>It collects telemetry such as processes, files, network activity and user activity.</li>
+                        <li>It collects information  such as processes activity, files activity, network activity and user activity.</li>
                         <li>It helps security analysts detect suspicious behavior and investigate incidents.</li>
                         <li>It also provides response capabilities such as device isolation.</li>
                     </ul>
@@ -571,11 +607,36 @@
               question: "What is Device Timeline?",
 
               answer: `
-                    <ul>
-                        <li>Device Timeline provides a chronological view of activities occurring on an endpoint.</li>
-                        <li>It can show processes, files, network connections and other activities.</li>
-                        <li>Security analysts use it to understand what happened before, during and after an alert.</li>
-                    </ul>
+                    <ol class="mt-3">
+                        <li class="mb-2">
+                          <strong>Device Timeline</strong> provides a
+                          chronological view of activities that occurred on an
+                          endpoint.
+                        </li>
+
+                        <li class="mb-2">
+                          It helps analysts understand what happened on a device
+                          before, during, and after a security alert.
+                        </li>
+
+                        <li class="mb-2">
+                          It can show activities such as:
+                          <ul class="mt-2">
+                            <li>Process execution</li>
+                            <li>File creation or modification</li>
+                            <li>Network connections</li>
+                            <li>Logon activity</li>
+                            <li>Registry changes</li>
+                            <li>Security events</li>
+                          </ul>
+                        </li>
+
+                        <li>
+                          It is useful for establishing the
+                          <strong>timeline and root cause of an incident</strong
+                          >.
+                        </li>
+                      </ol>
                 `,
             },
 
@@ -597,8 +658,8 @@
               answer: `
                     <ul>
                         <li>Device Isolation is an MDE response action used to contain a compromised endpoint.</li>
-                        <li>It restricts the device's network communication to help prevent further spread or attacker communication.</li>
-                        <li>The device can still communicate with required Defender services so investigation and remediation can continue.</li>
+                        <li>It helps prevent the device from communicating with other systems and potentially spreading the threat.</li>
+                        <li>After isolation, the security team can investigate the endpoint and perform remediation.</li>
                     </ul>
                 `,
             },
@@ -726,11 +787,24 @@
 
               answer: `
                     <ul>
-                        <li>Open the Microsoft Defender Portal.</li>
-                        <li>Review security incidents, alerts, device health and exposure information.</li>
-                        <li>Use available reports and dashboards based on the reporting requirement.</li>
-                        <li>Export relevant information when required.</li>
-                        <li>Prepare reports containing items such as incident count, severity, device health, remediation status and trends.</li>
+                        <li>Login to Microsoft Defender Portal.</li>
+                        <li>Go to Reports from the left-side navigation.</li>
+                        <li>Select the required report/category, such as: Endpoints, Incidents & alerts, Vulnerabilities, Device health</li>
+                        <li>Select the required date range, devices, severity, or other filters.</li>
+                        <li>Review and generate the report.</li>
+                        <li>Export the report if the required.</li>
+                    </ul>
+                `,
+            }, 
+            
+            {
+              question:
+                "What type of reports you generate in Microsoft Defender for Endpoint?",
+              answer: `
+                    <ul>
+                        I can prepare reports such as incident and alert reports,
+                        device health and onboarding reports,
+                        malware or threat reports, vulnerability reports, and security recommendation reports
                     </ul>
                 `,
             },
@@ -739,12 +813,14 @@
               question: "Prepared report for security incidents?",
 
               answer: `
-                  <div class="alert alert-success">
-                      I prepare the incident report by documenting the incident details,
-                      affected device and user, detected threat, investigation findings,
-                      actions taken, and current status. I also include the root cause
-                      and recommended remediation steps if needed.
-                  </div>
+                  <ul>
+                      <li>First, I collect the incident details from the Microsoft Defender portal.</li>
+                      <li>I record the incident name, severity, date/time, affected device, and user.</li>
+                      <li>I mention what suspicious activity or threat was detected.</li>
+                      <li>I document my investigation findings, such as Process Tree, File Hash, Network Activity, and Device Timeline.</li>
+                      <li>I mention the actions taken, such as device isolation, file quarantine, or blocking the malicious activity.</li>
+                      <li>Finally, I mention the current status, root cause if identified, and recommended next steps.</li>
+                  </ul>
               `,
             },
 
