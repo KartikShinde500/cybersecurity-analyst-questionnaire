@@ -209,7 +209,7 @@
   </head> -->
 
   <body>
-    <div class="container main-container">
+    <div class="container main-container" style="margin-bottom: 300px">
       <!-- Page Header -->
       <div class="text-center mb-4">
         <h2 class="page-title">Cybersecurity Interview Preparation</h2>
@@ -244,7 +244,7 @@
           questions: [
             {
               question: "Tell me about yourself.",
-              status:"done",
+              status: "done",
               answer: `
                     <ul>
                         <li>My name is Kartik Shinde and I am from Pune.</li>
@@ -261,7 +261,7 @@
               question:
                 "What are the roles and responsibilities of a Security Analyst?",
 
-              status:"done",
+              status: "done",
 
               answer: `
                     <ul>
@@ -283,7 +283,7 @@
 
             {
               question: "What is a Security Incident?",
-              status:"done",
+              status: "done",
 
               answer: `
                     <ol>
@@ -310,7 +310,7 @@
 
             {
               question: "What is the CIA Triad?",
-              status:"done",
+              status: "done",
 
               answer: `
                     <ul>
@@ -324,7 +324,7 @@
             {
               question:
                 "What is the difference between Threat, Vulnerability and Risk?",
-              status:"done",
+              status: "done",
 
               answer: `
                     <ul>
@@ -336,8 +336,8 @@
             },
 
             {
-              question:"Phishing Attack?",
-              answer:`Phishing is a social engineering attack used to trick users into revealing sensitive information or performing a malicious action.`
+              question: "Phishing Attack?",
+              answer: `Phishing is a social engineering attack used to trick users into revealing sensitive information or performing a malicious action.`,
             },
 
             {
@@ -735,14 +735,15 @@
 
               answer: `
                     <ul>
-                        <li>Monitor onboarded endpoint health and sensor status.</li>
-                        <li>Monitor new security alerts and incidents.</li>
-                        <li>Prioritize alerts based on severity and business impact.</li>
-                        <li>Investigate suspicious activities.</li>
-                        <li>Use Device Timeline, Process Tree, file and network information.</li>
-                        <li>Troubleshoot agent installation and onboarding issues.</li>
-                        <li>Monitor false positives and fine-tune policies when required.</li>
-                        <li>Prepare reports and escalate critical incidents.</li>
+                      <li>Operation activities included such as,
+                      <li>Check/Monitor onboarded endpoint health and sensor status.</li>
+                      <li>Monitor security alerts and incidents.</li>
+                      <li>Prioritize alerts based on severity and business impact.</li>
+                      <li>Investigate suspicious activities.</li>
+                      <li>Use Device Timeline, Process Tree, file and network information.</li>
+                      <li>Troubleshoot agent installation and onboarding issues.</li>
+                      <li>Monitor or identify false positives alerts and fine-tune policies when required.</li>
+                      <li>Prepare reports such as incident report, endpoint health report.</li>
                     </ul>
                 `,
             },
@@ -795,14 +796,14 @@
                         <li>Export the report if the required.</li>
                     </ul>
                 `,
-            }, 
-            
+            },
+
             {
               question:
-                "What type of reports you generate in Microsoft Defender for Endpoint?",
+                "What type of reports you prepared in Microsoft Defender for Endpoint?",
               answer: `
                     <ul>
-                        I can prepare reports such as incident and alert reports,
+                        I prepared reports such as incident and alert reports,
                         device health and onboarding reports,
                         malware or threat reports, vulnerability reports, and security recommendation reports
                     </ul>
@@ -810,7 +811,7 @@
             },
 
             {
-              question: "Prepared report for security incidents?",
+              question: "Prepare report for security incidents?",
 
               answer: `
                   <ul>
@@ -883,21 +884,7 @@
                 `,
             },
 
-            {
-              question: "How do you reduce False Positives in MDE?",
-
-              answer: `
-                    <ul>
-                        <li>Identify recurring false-positive alerts.</li>
-                        <li>Investigate the activity and determine the root cause.</li>
-                        <li>Validate the application, file or activity.</li>
-                        <li>Fine-tune the policy based on investigation results.</li>
-                        <li>Use specific and controlled exclusions when approved.</li>
-                        <li>Avoid broad exclusions.</li>
-                        <li>Monitor the environment after changes.</li>
-                    </ul>
-                `,
-            },
+            
           ],
         },
 
@@ -939,17 +926,24 @@
 
               answer: `
                     <ul>
-                        <li>Network connectivity issues.</li>
-                        <li>Proxy or firewall configuration problems.</li>
-                        <li>Unsupported operating systems or missing prerequisites.</li>
-                        <li>Third-party antivirus or any security software conflicts.</li>
-                        <li>Onboarding policy or script failures.</li>
-                        <li>Too many alerts and false positives.</li>
-                        <li>Legitimate applications being blocked.</li>
-                        <li>Business disruption due to aggressive security policies.</li>
+                      <li>The common challenges I faced were, inconsistent onboarding methods,
+                        where Different onboarding methods can cause duplicate onboarding or configuration issues.</li>
+                      <li>Some devices may not appear in the Defender Portal after onboarding.</li>
+                      <li>Network connectivity issues.</li>
+                      <li>Proxy or firewall configuration problems.</li>
+                      <li>Unsupported operating systems or missing prerequisites.</li>
+                      <li>Third-party antivirus create conflicts.</li>
+                      <li>Onboarding policy or script failures.</li>
+                      <li>Too many alerts and false positives.</li>
+                      <li>Legitimate applications being blocked.</li>
+                      <li>Another common challenge is enabling security policies too aggressively</li>
                     </ul>
 
                     <p>
+                        The common challenges I faced were onboarding issues, devices not appearing in the Defender Portal, network or proxy problems,
+                        third-party antivirus conflicts, policy or script failures, false positives, and legitimate applications being blocked.
+                        Sometimes aggressive security policies also affected business applications.
+
                         I would address these through pilot deployment, phased rollout, monitoring and
                         policy fine-tuning.
                     </p>
@@ -1002,29 +996,21 @@
                     </ol>
                 `,
             },
-
             {
-              question:
-                "How would you design and implement MDE security policies?",
-
-              status: "revision",
+              question: "How do you reduce False Positives in MDE?",
 
               answer: `
-                    <ol>
-                        <li>Understand the organization's security and business requirements.</li>
-                        <li>Identify endpoints and create appropriate device groups.</li>
-                        <li>Define required controls such as Antivirus, ASR, Firewall, Web Protection and Device Control.</li>
-                        <li>Start with a pilot/test group.</li>
-                        <li>Use appropriate monitoring or audit approaches where required.</li>
-                        <li>Monitor alerts, false positives and business impact.</li>
-                        <li>Fine-tune the policies based on results.</li>
-                        <li>Get required approval.</li>
-                        <li>Gradually move the policy into broader enforcement.</li>
-                        <li>Continuously monitor policy effectiveness.</li>
-                    </ol>
+                    <ul>
+                        <li>Identify recurring false-positive alerts.</li>
+                        <li>Investigate the activity and determine the root cause.</li>
+                        <li>Validate the application, file or activity.</li>
+                        <li>Fine-tune the policy based on investigation results.</li>
+                        <li>Use specific and controlled exclusions when approved.</li>
+                        <li>Avoid broad exclusions.</li>
+                        <li>Monitor the environment after changes.</li>
+                    </ul>
                 `,
             },
-
             {
               question: "What is your approach to MDE policy Fine-Tuning?",
 
@@ -1095,7 +1081,7 @@
             },
 
             {
-              question: "How do you investigate a DLP Alert?",
+              question: "You receive a DLP alert. How do you investigate it?",
 
               answer: `
                     <ol>
@@ -1115,11 +1101,11 @@
 
             {
               question:
-                "How would you implement Microsoft Purview DLP in an organization?",
+                "How will you implement Microsoft Purview DLP in an organization?",
 
               answer: `
                     <ol>
-                        <li>Understand the organization's data security and compliance requirements.</li>
+                        <li>i Understand the organization's data security and compliance requirements.</li>
                         <li>Identify sensitive data and where it exists.</li>
                         <li>Identify who can access and share the data.</li>
                         <li>Identify appropriate Sensitive Information Types and classification requirements.</li>
@@ -1135,8 +1121,63 @@
             },
 
             {
+              question: "DLP is generating too many alerts. What will you do?",
+
+              answer: `
+                <ul>
+                    <li>I would not disable the DLP policy. First, I would Analyze the alert patterns.</li>
+                    <li>Then I, Identify common false positives.</li>
+                    <li>Check which DLP rule is triggering the alerts.</li>
+                    <li>Review the policy thresholds.</li>
+                    <li>Understand the legitimate business workflows.</li>
+                    <li>Add appropriate exceptions if required.</li>
+                    <li>Test the policy changes in Simulation Mode.</li>
+                    <li>Monitor the alerts again after making changes.</li>
+                    <li>Gradually enforce the optimized policy.</li>
+                </ul>
+            `,
+            },
+
+            {
               question:
-                "What operational activities do you perform after implementing Purview DLP?",
+                "A DLP policy blocks a business-critical file. What will you do?",
+
+              answer: `
+                    <ol>
+                        <li>Review the DLP alert.</li>
+                        <li>Identify the user, file, policy, rule and activity.</li>
+                        <li>Verify whether the file contains sensitive information.</li>
+                        <li>Understand the business requirement.</li>
+                        <li>Verify whether the activity is authorized.</li>
+                        <li>Follow the exception/approval process if the activity is legitimate.</li>
+                        <li>Fine-tune the policy or apply a controlled exception if approved.</li>
+                        <li>Monitor the activity after the change.</li>
+                    </ol>
+                `,
+            },
+
+            {
+              question:
+                "Tell me about your DLP experience What operations you performed",
+
+              answer: `
+                <ul>
+                    <li>In my previous role, I worked with Microsoft Purview DLP mainly from the Security Operations side.</li>
+                    <li>My responsibilities included monitoring DLP alerts.</li>
+                    <li>Investigating user and file activities.</li>
+                    <li>Identifying True Positives and False Positives.</li>
+                    <li>Checking the sensitive information involved.</li>
+                    <li>Documenting DLP incidents.</li>
+                    <li>Supporting DLP policy tuning.</li>
+                    <li>I also had exposure to DLP policy configuration.</li>
+                    <li>I had exposure to Endpoint DLP and monitoring activities.</li>
+                </ul>
+              `,
+            },
+
+            {
+              question:
+                "What operations you perform after implementing Purview DLP?",
 
               answer: `
                     <ul>
@@ -1244,24 +1285,6 @@
                         <li>Apply the minimum required and specific policy adjustment or exclusion.</li>
                         <li>Verify the application works after the change.</li>
                         <li>Monitor the endpoint.</li>
-                    </ol>
-                `,
-            },
-
-            {
-              question:
-                "A DLP policy blocks a business-critical file. What will you do?",
-
-              answer: `
-                    <ol>
-                        <li>Review the DLP alert.</li>
-                        <li>Identify the user, file, policy, rule and activity.</li>
-                        <li>Verify whether the file contains sensitive information.</li>
-                        <li>Understand the business requirement.</li>
-                        <li>Verify whether the activity is authorized.</li>
-                        <li>Follow the exception/approval process if the activity is legitimate.</li>
-                        <li>Fine-tune the policy or apply a controlled exception if approved.</li>
-                        <li>Monitor the activity after the change.</li>
                     </ol>
                 `,
             },
