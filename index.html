@@ -337,7 +337,7 @@
 
             {
               question: "Phishing Attack?",
-              answer: `Phishing is a social engineering attack used to trick users into revealing sensitive information or performing a malicious action.`,
+              answer: `Phishing is a social engineering attack used to fake messages or websites to trick victims into giving away sensitive information.`,
             },
 
             {
@@ -534,7 +534,7 @@
 
         {
           id: "part3",
-          title: "Part 3 – Microsoft Defender for Endpoint (MDE)",
+          title: "Part 3 – MDE concepts & Fine-Tunning & False Positive",
           description: "MDE concepts and security capabilities",
 
           questions: [
@@ -704,6 +704,20 @@
             },
 
             {
+              question: "How do you reduce False Positives in MDE?",
+
+              answer: `
+                    <ul>
+                      <li>First, I investigate the alert using the Process Tree, Device Timeline, file details, and user activity.</li>
+                      <li>If the activity is confirmed as legitimate, I validate the business requirement and take the required approval.</li>
+                      <li>Then, if necessary, I apply specific and limited policy tuning or an exclusion rather than making a broad change.</li>
+                      <li>I test the change to make sure the legitimate activity works as expected.</li>
+                      <li>Finally, I continuously monitor the alerts to confirm that false positives are reduced without creating a security gap.</li>
+                    </ul>
+                `,
+            },
+
+            {
               question: "What is Fine-Tuning in MDE?",
 
               answer: `
@@ -715,6 +729,18 @@
                     </ul>
                 `,
             },
+
+            {
+              question: "What is your approach to MDE policy Fine-Tuning?",
+
+              answer: `
+                    <ol>
+                        <li>Policy fine-tuning means adjusting the security policy after deployment based on alerts, false positives and business requirements.</li>
+                        <li>I first analyze the alerts, identify the root cause, make the minimum required change, test it on a pilot group,</li>
+                        <li>and then monitor the results before applying it to production.</li>
+                    </ol>
+                `,
+            },
           ],
         },
 
@@ -723,11 +749,61 @@
         {
           id: "part4",
           title:
-            "Part 4 – Endpoint Operations and Report generation and Issue faced & MDE Agent troubleshoot",
+            "Part 4 – MDE Deployment & Challenges & Operations & Troubleshoot",
           description:
-            "Practical MDE agent and endpoint operational experience",
+            "MDE deployment, onboarding and security policy management",
 
           questions: [
+            {
+              question:
+                "How would you deploy Microsoft Defender for Endpoint on 25,000 devices?",
+
+              answer: `
+                    <ol>
+                        <li>First, I will understand environment.</li>
+                        <li>Check supported operating systems.</li>
+                        <li>Verify network, proxy and firewall connectivity.</li>
+                        <li>Identify existing antivirus/security solutions.</li>
+                        <li>Select the appropriate onboarding method such as Intune or Configuration Manager.</li>
+                        <li>Start with a pilot group, First onboard a small group of around 100 devices. Including devices from IT, Security, and different business departments.</li>
+                        <li>Verify sensor health and confirm that alerts are being received properly.</li>
+                        <li>If the pilot is successful, deploy MDE in batches.For example: 100 → 500 → 2,000 → 5,000 → remaining devices.</li>
+                        <li>After each phase, monitor onboarding success rate, device health, alerts, and performance impact.</li>
+                        <li>Finally, Onboard remaining devices and prepare deployment and health reports.</li>
+                    </ol>
+
+                `,
+            },
+
+            {
+              question: "What challenges can occur during Defender deployment?",
+
+              answer: `
+                    <ul>
+                      <li>The common challenges I faced were, inconsistent onboarding methods,
+                        where Different onboarding methods can cause duplicate onboarding or configuration issues.</li>
+                      <li>Some devices may not appear in the Defender Portal after onboarding.</li>
+                      <li>Network connectivity issues.</li>
+                      <li>Proxy or firewall configuration problems.</li>
+                      <li>Unsupported operating systems or missing prerequisites.</li>
+                      <li>Third-party antivirus create conflicts.</li>
+                      <li>Onboarding policy or script failures.</li>
+                      <li>Too many alerts and false positives.</li>
+                      <li>Legitimate applications being blocked.</li>
+                      <li>Another common challenge is enabling security policies too aggressively</li>
+                    </ul>
+
+                    <p>
+                        The common challenges I faced were onboarding issues, devices not appearing in the Defender Portal, network or proxy problems,
+                        third-party antivirus conflicts, policy or script failures, false positives, and legitimate applications being blocked.
+                        Sometimes aggressive security policies also affected business applications.
+
+                        I would address these through pilot deployment, phased rollout, monitoring and
+                        policy fine-tuning.
+                    </p>
+                `,
+            },
+
             {
               question: "What is your daily MDE operational activities?",
 
@@ -745,6 +821,28 @@
                       <li>Monitor or identify false positives alerts and fine-tune policies when required.</li>
                       <li>Prepare reports such as incident report, endpoint health report.</li>
                     </ul>
+                `,
+            },
+
+            {
+              question:
+                "Steps for Device/Endpoint Onboarding?",
+              status: "done",
+              // status:"revision",
+
+              answer: `
+                    <ol>
+                        <li>First step is Log in to Microsoft Defender Portal</li>
+                        <li>Then Go to onboarding.
+                        <li>And then Select operaing system.</li>
+                        <li>Then select deployment method.</li>
+                        <li>Then Click Download onboarding package/script.</li>
+                        <li>A Zip file will be downloaded.</li>
+                        <li>Extract the downloaded Zip file.</li>
+                        <li>Run script file as administrator.</li>
+                        <li>The device will start onboarding to MDE.</li>
+                        <li>And verify the device appears in the Defender Portal.</li>
+                    </ol>
                 `,
             },
 
@@ -782,6 +880,48 @@
                 `,
             },
 
+            {
+              question:
+                "Microsoft Defender for Endpoint using Intune on a device?",
+
+              answer: `
+                    <ol>
+                      <li>For an Intune-managed device, I first make sure the device is enrolled in Intune.</li>
+                      <li>Then I configure the MDE onboarding policy under Endpoint Security, assign it to the appropriate device group, and allow Intune to push the configuration.</li>
+                      <li>Finally, I verify that the device is onboarded and reporting correctly in the Microsoft Defender Portal.</li>
+                    </ol>
+                `,
+            },
+
+            
+            {
+              question:
+                "How do you troubleshoot MDE Agent Installation or Onboarding issues?",
+
+              answer: `
+                    <ul>
+                        <li>I first check whether the Sensor service is running,</li>
+                        <li>then verify Defender services and network connectivity.</li>
+                        <li>I check proxy or firewall issues,</li>
+                        <li>verify that the onboarding script was executed correctly,</li>
+                        <li>and finally check the Defender Portal to confirm the device is reporting properly.</li>
+                    </ul>
+                `,
+            },
+
+            
+          ],
+        },
+
+        /* PART 5 */
+
+        {
+          id: "part5",
+          title: "Part 5 – Report Preparation & Generation",
+          description:
+            "Practical MDE agent and endpoint operational experience",
+
+          questions: [
             {
               question:
                 "How to generate reports in Microsoft Defender for Endpoint?",
@@ -824,209 +964,6 @@
                   </ul>
               `,
             },
-
-            {
-              question: "Have you worked on MDE Agent Installation/Onboarding?",
-              status: "done",
-
-              answer: `
-                    <ul>
-                        <li>Yes, I have worked with MDE endpoint onboarding.</li>
-                        <li>For managed enterprise devices, onboarding can be performed using Microsoft Intune.</li>
-                        <li>After onboarding, I verify the device in the Defender Portal.</li>
-                        <li>I check device health, sensor status, last seen and telemetry.</li>
-                    </ul>
-                `,
-            },
-
-            {
-              question:
-                "How do you troubleshoot MDE Agent Installation or Onboarding issues?",
-
-              answer: `
-                    <ul>
-                        <li>Check whether the device meets the onboarding prerequisites.</li>
-                        <li>Check network and Internet connectivity.</li>
-                        <li>Check proxy and firewall configuration.</li>
-                        <li>Verify the MDE sensor/service status.</li>
-                        <li>Verify that the onboarding policy or script was applied correctly.</li>
-                        <li>Review available logs and error information.</li>
-                        <li>Fix the issue and verify communication with the Defender Portal.</li>
-                    </ul>
-                `,
-            },
-
-            {
-              question: "What is Whitelisting in MDE?",
-
-              answer: `
-                    <ul>
-                        <li>Whitelisting means allowing a known and trusted application, file or activity that would otherwise be blocked or detected.</li>
-                        <li>In MDE, this should be handled through appropriate exclusions or policy configuration.</li>
-                        <li>Whitelisting should be specific, justified, approved and regularly reviewed.</li>
-                    </ul>
-                `,
-            },
-
-            {
-              question: "How do you handle a Whitelisting request?",
-
-              answer: `
-                    <ol>
-                        <li>Understand why the application or file needs to be whitelisted.</li>
-                        <li>Verify that it is legitimate and business-approved.</li>
-                        <li>Investigate file details, hash, publisher and behavior.</li>
-                        <li>Check whether the detection is a false positive.</li>
-                        <li>Follow the organization's approval process.</li>
-                        <li>Apply the minimum required and specific exclusion.</li>
-                        <li>Monitor the result after the change.</li>
-                    </ol>
-                `,
-            },
-
-            
-          ],
-        },
-
-        /* PART 5 */
-
-        {
-          id: "part5",
-          title: "Part 5 – MDE Deployment & Policy Management",
-          description:
-            "MDE deployment, onboarding and security policy management",
-
-          questions: [
-            {
-              question:
-                "How would you deploy Microsoft Defender for Endpoint on 25,000 devices?",
-
-              answer: `
-                    <ol>
-                        <li>First, I will understand environment.</li>
-                        <li>Check supported operating systems.</li>
-                        <li>Verify network, proxy and firewall connectivity.</li>
-                        <li>Identify existing antivirus/security solutions.</li>
-                        <li>Select the appropriate onboarding method such as Intune or Configuration Manager.</li>
-                        <li>Start with a small pilot group containing small number of device around 100.</li>
-                        <li>and then Validate onboarding, sensor health, alerts and policy impact.</li>
-                        <li>Deploy in phases instead of onboarding all 25,000 devices at once.</li>
-                        <li>Continuously monitor onboarding failures, false positives and device health.</li>
-                    </ol>
-
-                    <div class="alert alert-success">
-                        <strong>Easy:</strong>
-                        Assessment → Preparation → Pilot → Validate → Phased Rollout → Monitor
-                    </div>
-                `,
-            },
-
-            {
-              question: "What challenges can occur during Defender deployment?",
-
-              answer: `
-                    <ul>
-                      <li>The common challenges I faced were, inconsistent onboarding methods,
-                        where Different onboarding methods can cause duplicate onboarding or configuration issues.</li>
-                      <li>Some devices may not appear in the Defender Portal after onboarding.</li>
-                      <li>Network connectivity issues.</li>
-                      <li>Proxy or firewall configuration problems.</li>
-                      <li>Unsupported operating systems or missing prerequisites.</li>
-                      <li>Third-party antivirus create conflicts.</li>
-                      <li>Onboarding policy or script failures.</li>
-                      <li>Too many alerts and false positives.</li>
-                      <li>Legitimate applications being blocked.</li>
-                      <li>Another common challenge is enabling security policies too aggressively</li>
-                    </ul>
-
-                    <p>
-                        The common challenges I faced were onboarding issues, devices not appearing in the Defender Portal, network or proxy problems,
-                        third-party antivirus conflicts, policy or script failures, false positives, and legitimate applications being blocked.
-                        Sometimes aggressive security policies also affected business applications.
-
-                        I would address these through pilot deployment, phased rollout, monitoring and
-                        policy fine-tuning.
-                    </p>
-                `,
-            },
-
-            {
-              question:
-                "Microsoft Defender for Endpoint using Intune on a device?",
-
-              answer: `
-                    <ol>
-                        <li>Log in to <strong>Microsoft Intune Admin Center</strong>.</li>
-                        <li>Go to <strong>Endpoint security → Microsoft Defender for Endpoint</strong>.</li>
-                        <li>Connect/enable the <strong>Microsoft Defender for Endpoint connector</strong> with Intune.</li>
-                        <li>Go to <strong>Endpoint security → Antivirus</strong>.</li>
-                        <li>Create a Microsoft Defender Antivirus policy if required.</li>
-                        <li>Configure the <strong>EDR onboarding policy</strong>.</li>
-                        <li>Select Windows 10, Windows 11 and Server as applicable.</li>
-                        <li>Assign the policy to the test device/user group.</li>
-                        <li>Sync the target laptop with Intune.</li>
-                        <li>Intune applies the MDE onboarding policy.</li>
-                        <li>The MDE sensor starts communicating with the Microsoft Defender cloud.</li>
-                        <li>Open <strong>Microsoft Defender Portal → Assets → Devices</strong>.</li>
-                        <li>Verify the laptop appears in the portal.</li>
-                        <li>Check Device Health, Last Seen, Risk Level and Sensor Health.</li>
-                        <li>Confirm telemetry and security alerts are reaching the portal.</li>
-                    </ol>
-                `,
-            },
-
-            {
-              question:
-                "Onboard a single Windows laptop using the Local Script method?",
-              status: "done",
-              // status:"revision",
-
-              answer: `
-                    <ol>
-                        <li>First step is Log in to Microsoft Defender Portal</li>
-                        <li>Then sencond step Go to onboarding. <strong>Settings → Endpoints → Onboarding</strong>.</li>
-                        <li>And then Select operaing system.</li>
-                        <li>Then select deployment method.</li>
-                        <li>Then step 4 Click Download onboarding package/script.</li>
-                        <li>A Zip file will be downloaded.</li>
-                        <li>Extract the downloaded Zip file.</li>
-                        <li>Run script file as administrator.</li>
-                        <li>The device will start onboarding to MDE.</li>
-                        <li>And verify the device appears in the Defender Portal.</li>
-                    </ol>
-                `,
-            },
-            {
-              question: "How do you reduce False Positives in MDE?",
-
-              answer: `
-                    <ul>
-                        <li>Identify recurring false-positive alerts.</li>
-                        <li>Investigate the activity and determine the root cause.</li>
-                        <li>Validate the application, file or activity.</li>
-                        <li>Fine-tune the policy based on investigation results.</li>
-                        <li>Use specific and controlled exclusions when approved.</li>
-                        <li>Avoid broad exclusions.</li>
-                        <li>Monitor the environment after changes.</li>
-                    </ul>
-                `,
-            },
-            {
-              question: "What is your approach to MDE policy Fine-Tuning?",
-
-              answer: `
-                    <ol>
-                        <li>Identify policies generating excessive alerts or business impact.</li>
-                        <li>Investigate the alerts and understand the root cause.</li>
-                        <li>Analyze Device Timeline, Process Tree, file information, network activity and user context.</li>
-                        <li>Determine whether the activity is malicious or legitimate.</li>
-                        <li>If legitimate, make the minimum required policy adjustment.</li>
-                        <li>Use specific and controlled exclusions when required and approved.</li>
-                        <li>Monitor the results after the change.</li>
-                        <li>Ensure security protection is maintained.</li>
-                    </ol>
-                `,
-            },
           ],
         },
 
@@ -1066,22 +1003,29 @@
                 `,
             },
 
-            {
-              question: "What is Simulation Mode in Purview DLP?",
+             {
+              question:
+                "How will you implement Microsoft Purview DLP in an organization?",
 
               answer: `
-                    <ul>
-                        <li>Simulation Mode allows us to test a DLP policy before enforcing it.</li>
-                        <li>It helps understand how many users and activities may be affected.</li>
-                        <li>It helps identify false positives and potential business impact.</li>
-                        <li>Based on the results, we can fine-tune the policy.</li>
-                        <li>After validation and approval, the policy can move to enforcement.</li>
-                    </ul>
+                    <ol>
+                        <li>First, i Understand the organization's data security and compliance requirements.</li>
+                        <li>Identify sensitive data and where it exists.</li>
+                        <li>Identify who can access and share the data.</li>
+                        <li>Identify appropriate Sensitive Information Types and classification requirements.</li>
+                        <li>Create DLP policies with conditions, exceptions and actions.</li>
+                        <li>Start with Simulation/Test mode.</li>
+                        <li>Analyze simulation results and identify false positives.</li>
+                        <li>Fine-tune the policy.</li>
+                        <li>Get required approval.</li>
+                        <li>Move the policy to enforcement.</li>
+                        <li>Continuously monitor alerts and policy effectiveness.</li>
+                    </ol>
                 `,
             },
 
             {
-              question: "You receive a DLP alert. How do you investigate it?",
+              question: "How you investigate DLP alert?",
 
               answer: `
                     <ol>
@@ -1099,26 +1043,7 @@
                 `,
             },
 
-            {
-              question:
-                "How will you implement Microsoft Purview DLP in an organization?",
-
-              answer: `
-                    <ol>
-                        <li>i Understand the organization's data security and compliance requirements.</li>
-                        <li>Identify sensitive data and where it exists.</li>
-                        <li>Identify who can access and share the data.</li>
-                        <li>Identify appropriate Sensitive Information Types and classification requirements.</li>
-                        <li>Create DLP policies with conditions, exceptions and actions.</li>
-                        <li>Start with Simulation/Test mode.</li>
-                        <li>Analyze simulation results and identify false positives.</li>
-                        <li>Fine-tune the policy.</li>
-                        <li>Get required approval.</li>
-                        <li>Move the policy to enforcement.</li>
-                        <li>Continuously monitor alerts and policy effectiveness.</li>
-                    </ol>
-                `,
-            },
+           
 
             {
               question: "DLP is generating too many alerts. What will you do?",
@@ -1211,6 +1136,7 @@
             {
               question:
                 "How do you investigate an incident from start to finish and what actions do you take?",
+              status: "revision",
 
               answer: `
                     <ol>
@@ -1238,14 +1164,12 @@
 
               answer: `
                     <ol>
-                        <li>I received a security alert from Microsoft Defender for Endpoint.</li>
-                        <li>I performed alert triage by checking severity, affected device, user and detection details.</li>
-                        <li>I investigated the activity using Device Timeline, Process Tree, file information and network activity.</li>
-                        <li>I identified the suspicious process/file and checked related activities.</li>
-                        <li>I determined whether the activity was malicious or legitimate.</li>
-                        <li>For a confirmed compromise, I would follow the containment process and escalate based on severity.</li>
-                        <li>I coordinated with the IT/endpoint team for remediation.</li>
-                        <li>I verified the endpoint was healthy and documented the incident.</li>
+                      <li>I investigated an alert related to suspicious PowerShell activity on a Windows endpoint.
+                      <li>First, I checked the incident details and affected user and device.
+                      <li>Then I reviewed the Device Timeline and Process Tree to understand which process started PowerShell and what command was executed.
+                      <li>I also checked the file hash and network connections.
+                      <li>After reviewing the activity, I determined that the activity was suspicious and followed the required containment and remediation process.
+                      <li>I documented the findings and actions taken and continued monitoring the endpoint.
                     </ol>
                 `,
             },
@@ -1291,24 +1215,6 @@
 
             {
               question:
-                "How do you reduce False Positives after deploying a security policy?",
-
-              answer: `
-                    <ol>
-                        <li>Identify recurring false-positive alerts.</li>
-                        <li>Investigate the alerts and understand the root cause.</li>
-                        <li>Validate the application, file or activity.</li>
-                        <li>Check the business context.</li>
-                        <li>Fine-tune the policy based on investigation results.</li>
-                        <li>Apply specific approved exceptions when required.</li>
-                        <li>Avoid broad exclusions.</li>
-                        <li>Monitor the environment after the change.</li>
-                    </ol>
-                `,
-            },
-
-            {
-              question:
                 "What will you do if an MDE Agent is not communicating with the Defender Portal?",
 
               answer: `
@@ -1331,7 +1237,6 @@
 
               answer: `
                     <ol>
-                        <li>Identify the affected device.</li>
                         <li>Check Device Health information.</li>
                         <li>Check Last Seen and sensor health.</li>
                         <li>Verify network connectivity.</li>
@@ -1428,7 +1333,7 @@
         /* PART 9*/
         {
           id: "part9",
-          title: "Part 9 – HR & Behavioral Questions",
+          title: "Part 9 – HR Questions",
           description:
             "Common HR and behavioral questions for Security Analyst interviews",
 
