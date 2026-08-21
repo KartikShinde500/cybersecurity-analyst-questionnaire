@@ -1003,23 +1003,28 @@
                 `,
             },
 
-             {
+            {
+              question: "How you determine which file contains sensitive data",
+              answer: `
+                <ul>
+                    <li>I determine sensitive data mainly using Sensitive Information Types and Sensitivity Labels configured in Microsoft Purview.</li>
+                    <li>Purview scans the content and looks for defined sensitive patterns such as medical, financial information or other confidential data.</li>
+                    <li>DLP policies then use these detections to monitor, alert, warn or block specific activities.</li>
+                </ul>
+            `,
+            },
+
+            {
               question:
                 "How will you implement Microsoft Purview DLP in an organization?",
 
               answer: `
                     <ol>
-                        <li>First, i Understand the organization's data security and compliance requirements.</li>
-                        <li>Identify sensitive data and where it exists.</li>
-                        <li>Identify who can access and share the data.</li>
-                        <li>Identify appropriate Sensitive Information Types and classification requirements.</li>
-                        <li>Create DLP policies with conditions, exceptions and actions.</li>
-                        <li>Start with Simulation/Test mode.</li>
-                        <li>Analyze simulation results and identify false positives.</li>
-                        <li>Fine-tune the policy.</li>
-                        <li>Get required approval.</li>
-                        <li>Move the policy to enforcement.</li>
-                        <li>Continuously monitor alerts and policy effectiveness.</li>
+                        <li>I would first identify the sensitive data and understand where it is stored.</li>
+                        <li>Then I would create the Purview DLP policy and initially test it in simulation mode.</li>
+                        <li>I would analyze the results and reduce false positives.</li>
+                        <li>After validation, I would gradually enable enforcement for selected users or departments.</li>
+                        <li>Finally, I would monitor DLP alerts and Activity Explorer and continuously fine-tune the policy based on business requirements.</li>
                     </ol>
                 `,
             },
@@ -1029,54 +1034,36 @@
 
               answer: `
                     <ol>
-                        <li>Open the DLP alert and review the details.</li>
-                        <li>Check the user involved.</li>
-                        <li>Check the device and file/data involved.</li>
-                        <li>Identify the sensitive information type.</li>
-                        <li>Check the DLP policy and rule triggered.</li>
-                        <li>Review the activity and destination.</li>
-                        <li>Determine whether the activity was authorized business activity.</li>
-                        <li>Coordinate with the data owner or relevant team when required.</li>
-                        <li>Take remediation or escalation action for genuine violations.</li>
-                        <li>Document the investigation and outcome.</li>
+                        <li>I review the DLP alert to see exactly which policy was triggered, who triggered it, and the destination of the file.</li>
+                        <li>If the block was a mistake and the transfer is safe, then i will authorize the transaction and whitelist the file or user.</li>
+                        <li>If legitment business processes are regularly flagged, i will adjust the DLP policy rules to prevent future disruption.</li>
                     </ol>
                 `,
             },
-
            
-
             {
               question: "DLP is generating too many alerts. What will you do?",
 
               answer: `
                 <ul>
-                    <li>I would not disable the DLP policy. First, I would Analyze the alert patterns.</li>
-                    <li>Then I, Identify common false positives.</li>
-                    <li>Check which DLP rule is triggering the alerts.</li>
-                    <li>Review the policy thresholds.</li>
-                    <li>Understand the legitimate business workflows.</li>
-                    <li>Add appropriate exceptions if required.</li>
-                    <li>Test the policy changes in Simulation Mode.</li>
-                    <li>Monitor the alerts again after making changes.</li>
-                    <li>Gradually enforce the optimized policy.</li>
+                    <li>If DLP generates too many alerts, I first analyze the alerts to identify the common patterns.</li>
+                    <li>Then I determine which alerts are true positives and false positives.</li>
+                    <li>For legitimate business activities, I fine-tune the policy by adjusting conditions or exceptions.</li>
+                    <li>I test the changes in simulation mode and then monitor the results after applying them.</li>
                 </ul>
             `,
             },
-
+            
             {
               question:
                 "A DLP policy blocks a business-critical file. What will you do?",
 
               answer: `
                     <ol>
-                        <li>Review the DLP alert.</li>
-                        <li>Identify the user, file, policy, rule and activity.</li>
-                        <li>Verify whether the file contains sensitive information.</li>
-                        <li>Understand the business requirement.</li>
-                        <li>Verify whether the activity is authorized.</li>
-                        <li>Follow the exception/approval process if the activity is legitimate.</li>
-                        <li>Fine-tune the policy or apply a controlled exception if approved.</li>
-                        <li>Monitor the activity after the change.</li>
+                      <li>First, I would investigate why the file was blocked and identify the DLP rule and sensitive information that triggered it.</li>
+                      <li>Then I would validate the business requirement with the file owner.</li>
+                      <li>If the activity is legitimate, I would take the required approval and make policy adjustment rather than disabling the entire policy.</li>
+                      <li>I would test the change in simulation mode and then monitor the results</li>
                     </ol>
                 `,
             },
