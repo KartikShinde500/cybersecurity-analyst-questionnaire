@@ -1013,7 +1013,7 @@
                 </ul>
             `,
             },
-
+            
             {
               question:
                 "How will you implement Microsoft Purview DLP in an organization?",
@@ -1025,6 +1025,26 @@
                         <li>I would analyze the results and reduce false positives.</li>
                         <li>After validation, I would gradually enable enforcement for selected users or departments.</li>
                         <li>Finally, I would monitor DLP alerts and Activity Explorer and continuously fine-tune the policy based on business requirements.</li>
+                    </ol>
+                `,
+            },
+
+            {
+              question:
+                "Steps to Create a Microsoft Purview DLP Policy",
+
+              answer: `
+                    <ol>
+                        <li>Login to Microsoft Purview Portal.</li>
+                        <li>Go to Solutions → Data Loss Prevention → Policies.</li>
+                        <li>Click Create Policy.</li>
+                        <li>Select the DLP template or create a custom policy.</li>
+                        <li>Select the locations – Exchange, SharePoint, OneDrive, Teams, Endpoint.</li>
+                        <li>Select Sensitive Information Types or Sensitivity Labels.</li>
+                        <li>Configure the conditions and actions – Alert, Warn, or Block.</li>
+                        <li>Start with Simulation mode and test the policy.</li>
+                        <li>Fine-tune the policy based on the results.</li>
+                        <li>And finally, Enable Enforcement and monitor the DLP alerts.</li>
                     </ol>
                 `,
             },
