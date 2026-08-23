@@ -1106,37 +1106,51 @@
 
               answer: `
                 <ul>
-                    <li>In my previous role, I worked with Microsoft Purview DLP mainly from the Security Operations side.</li>
-                    <li>My responsibilities included monitoring DLP alerts.</li>
-                    <li>Investigating user and file activities.</li>
-                    <li>Identifying True Positives and False Positives.</li>
-                    <li>Checking the sensitive information involved.</li>
-                    <li>Documenting DLP incidents.</li>
-                    <li>Supporting DLP policy tuning.</li>
-                    <li>I also had exposure to DLP policy configuration.</li>
-                    <li>I had exposure to Endpoint DLP and monitoring activities.</li>
+                  <li>I mainly monitored alerts, investigated the affected user and file</li>
+                  <li>checked the sensitive information and policy rule that triggered the alert,</li>
+                  <li>validated whether the activity was legitimate, documented the findings,</li>
+                  <li> and coordinated with the senior team for further action</li>
                 </ul>
               `,
             },
 
             {
               question:
-                "What operations you perform after implementing Purview DLP?",
+                "What is Activity Explorer?",
 
               answer: `
                     <ul>
-                        <li>Monitor DLP alerts and incidents.</li>
-                        <li>Perform DLP alert triage.</li>
-                        <li>Investigate users, files, sensitive data and activities.</li>
-                        <li>Identify and investigate false positives.</li>
-                        <li>Fine-tune DLP policies.</li>
-                        <li>Handle approved policy exceptions.</li>
-                        <li>Monitor sensitive data sharing activities.</li>
-                        <li>Coordinate with IT, Security, Compliance and Data Owners.</li>
-                        <li>Escalate high-risk data security incidents.</li>
-                        <li>Maintain investigation and remediation records.</li>
-                        <li>Prepare DLP reports.</li>
-                        <li>Periodically review policies.</li>
+                        <li>Activity Explorer is a monitoring tool in Microsoft Purview that helps us view and investigate data-related activities.</li>
+                        <li>We can see activities like file access, sharing, copying, modification, and DLP-related activities.</li>
+                        <li>It helps us understand who performed the activity, what file was involved, when it happened, and what action was taken</li>
+                    </ul>
+                `,
+            },
+
+            {
+              question:
+                "Why might a DLP policy fail to trigger",
+
+              answer: `
+                    <ul>
+                      <li>Common reasons:
+                      <li>Wrong location selected.</li>
+                      <li>DLP policy is not enabled or scoped to the user/group.</li>
+                      <li>Sensitive Information Type is not matching.</li>
+                      <li>Conditions are not configured correctly.</li>
+                      <li>Policy is still in Simulation mode.</li>
+                    </ul>
+                `,
+            },
+
+            {
+              question:
+                "How do you troubleshoot DLP policy fail to trigger?",
+              answer: `
+                    <ul>
+                      <li>If a DLP policy does not trigger, I first check whether the correct location and users are included.</li>
+                      <li>Then I verify the Sensitive Information Type, conditions, thresholds and policy mode.</li>
+                      <li>I also check whether the policy is correctly applied and review the relevant activity or DLP logs to identify the issue.</li>
                     </ul>
                 `,
             },
@@ -1158,23 +1172,13 @@
               status: "revision",
 
               answer: `
-                    <ol>
-                        <li>Receive and identify the incident.</li>
-                        <li>Perform alert triage based on severity and business impact.</li>
-                        <li>Investigate using Device Timeline, Process Tree, file information and network activity.</li>
-                        <li>Determine the root cause.</li>
-                        <li>Contain the threat when required.</li>
-                        <li>Remediate the affected endpoint or system.</li>
-                        <li>Verify that the threat is removed.</li>
-                        <li>Monitor for recurrence.</li>
-                        <li>Document the investigation and final outcome.</li>
-                        <li>Close or escalate the incident according to the process.</li>
-                    </ol>
-
-                    <div class="alert alert-success">
-                        Alert → Triage → Investigate → Root Cause → Contain →
-                        Remediate → Verify → Document → Close
-                    </div>
+                  <ol>
+                    <li>First, I review the alert details, their severity, affected device, and user.</li>
+                    <li>Then I investigate the activity using Device Timeline, Process Tree, File Details, Hash, and Network Activity.</li> 
+                    <li>I determine whether it is a True Positive or False Positive.</li>
+                    <li>If it looks suspicious, I immediately coordinate with the senior/security team and follow their guidance for containment or remediation.</li>
+                    <li>I document my investigation, findings, and actions taken, and continue monitoring the device until the incident is resolved.</li>
+                  </ol>
                 `,
             },
 
@@ -1183,12 +1187,15 @@
 
               answer: `
                     <ol>
-                      <li>I investigated an alert related to suspicious PowerShell activity on a Windows endpoint.
-                      <li>First, I checked the incident details and affected user and device.
-                      <li>Then I reviewed the Device Timeline and Process Tree to understand which process started PowerShell and what command was executed.
-                      <li>I also checked the file hash and network connections.
-                      <li>After reviewing the activity, I determined that the activity was suspicious and followed the required containment and remediation process.
-                      <li>I documented the findings and actions taken and continued monitoring the endpoint.
+                      // <li>I investigated an alert related to suspicious PowerShell activity on a Windows endpoint.
+                      // <li>First, I checked the incident details and affected user and device.
+                      // <li>Then I reviewed the Device Timeline and Process Tree to understand which process started PowerShell and what command was executed.
+                      // <li>I also checked the file hash and network connections.
+                      // <li>After reviewing the activity, I determined that the activity was suspicious and followed the required containment and remediation process.
+                      // <li>I documented the findings and actions taken and continued monitoring the endpoint.
+
+                        <li>My role was mainly monitoring, False Positive investigation and documentation.</li>
+                        <li>For policy changes or exclusions, I coordinated with the senior team and followed the required approval process.</li>
                     </ol>
                 `,
             },
