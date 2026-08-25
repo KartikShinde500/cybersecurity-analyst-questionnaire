@@ -678,6 +678,20 @@
             },
 
             {
+              question: "What is Threat and Vulnerability Management and what is purpoes of TVM?",
+
+              answer: `
+                    <ol>
+                      <li>Threat and Vulnerability Management is used to identify and prioritize vulnerabilities in endpoints and applications.</li>
+                      <li>Its purpose is to reduce security risk by helping the organization understand which vulnerabilities are most important and coordinate remediation, such as patching or updating the affected software.</li>
+                    </ol>
+                    <ul>
+                      <li>The main purpose is to reduce the organization's attack surface and security risk by fixing vulnerabilities before attackers can exploit them.</li>
+                    </ul>
+                `,
+            },
+
+            {
               question: "What is ASR – Attack Surface Reduction?",
 
               answer: `
@@ -773,16 +787,14 @@
 
               answer: `
                     <ol>
-                        <li>First, I will understand environment.</li>
-                        <li>Check supported operating systems.</li>
-                        <li>Verify network, proxy and firewall connectivity.</li>
-                        <li>Identify existing antivirus/security solutions.</li>
-                        <li>Select the appropriate onboarding method such as Intune or Configuration Manager.</li>
-                        <li>Start with a pilot group, First onboard a small group of around 100 devices. Including devices from IT, Security, and different business departments.</li>
-                        <li>Verify sensor health and confirm that alerts are being received properly.</li>
-                        <li>If the pilot is successful, I will gradually deploy MDE in batches.For example: 100 → 500 → 2,000 → 5,000 → remaining devices.</li>
-                        <li>After each phase, monitor onboarding success rate, device health, alerts, and performance impact.</li>
-                        <li>Finally, Onboard remaining devices and prepare deployment and health reports.</li>
+                      <li>First, I would understand the environment and check the supported operating systems, network connectivity, proxy and firewall configuration, and existing security solutions.</li>
+                      <li>Then I would select the appropriate deployment method, such as Configuration Manager.</li>
+                      <li>Before large-scale deployment, I would conduct a POC on a small number of test devices to verify onboarding, sensor health, telemetry, alerts, and application compatibility.</li>
+                      <li>If the POC is successful, I would start a pilot with around 100 devices from IT, Security, and different business departments.</li>
+                      <li>I would monitor the pilot and resolve any issues.</li>
+                      <li>After successful validation, I would gradually deploy MDE in phases, for example 500, 2,000, 5,000, and then the remaining devices.</li>
+                      <li>After each phase, I would monitor onboarding status, device health, alerts, and performance.</li>
+                      <li>Finally, I would onboard the remaining devices and prepare the deployment and health reports.</li>
                     </ol>
 
                 `,
