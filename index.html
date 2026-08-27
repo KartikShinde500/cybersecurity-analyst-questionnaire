@@ -354,6 +354,23 @@
                     </ul>
                 `,
             },
+            {
+              question:
+                "Endpoint Detection and Response Tools.",
+
+              answer: `
+                    <ol>
+                      <li>Microsoft Defender For Endpoint (MDE). This was at No.4 and now at top.</li>
+                      <li>CrowdStrike Falcon.</li>
+                      <li>SentinelOne Singularity.</li>
+                      <li>Palo Alto Cortex XDR.</li>
+                      <li>VMware Carbon Black.</li>
+                      <li>Trend Micro Vision One.</li>
+                      <li>Cybereason EDR.</li>
+                      <li>Elastic Security.</li>
+                    </ol>
+                `,
+            },
           ],
         },
 
@@ -617,6 +634,47 @@
             },
 
             {
+              question: "What is TVM - Threat and Vulnerability Management and its purpoes?",
+
+              answer: `
+                    <ol>
+                      <li>Threat and Vulnerability Management is used to identify and prioritize vulnerabilities in endpoints and applications.</li>
+                      <li>Its purpose is to reduce security risk by helping the organization understand which vulnerabilities are most important and coordinate remediation, such as patching or updating the affected software.</li>
+                    </ol>
+                    <ul>
+                      <li>The main purpose is to reduce the organization's attack surface and security risk by fixing vulnerabilities before attackers can exploit them.</li>
+                    </ul>
+                `,
+            },
+
+            {
+              question: "What is ASR – Attack Surface Reduction?",
+
+              answer: `
+                    <ul>
+                        <li>ASR stands for <strong>Attack Surface Reduction</strong>.</li>
+                        <li>ASR rules help reduce common attack techniques used by malware and attackers.</li>
+                        <li>Examples include blocking suspicious Office child processes and risky script behavior.</li>
+                        <li>Policies should be tested and fine-tuned before broad enforcement.</li>
+                    </ul>
+                `,
+            },
+
+            {
+              question:
+                "What is AIR – Automated Investigation and Remediation?",
+
+              answer: `
+                    <ul>
+                        <li>AIR stands for <strong>Automated Investigation and Remediation</strong>.</li>
+                        <li>It automatically investigates certain alerts and identifies potentially malicious activities.</li>
+                        <li>It can recommend or perform remediation actions depending on configuration and permissions.</li>
+                        <li>It helps reduce manual investigation effort and improve response time.</li>
+                    </ul>
+                `,
+            },
+
+            {
               question: "What is Device Timeline?",
 
               answer: `
@@ -678,47 +736,6 @@
             },
 
             {
-              question: "What is Threat and Vulnerability Management and what is purpoes of TVM?",
-
-              answer: `
-                    <ol>
-                      <li>Threat and Vulnerability Management is used to identify and prioritize vulnerabilities in endpoints and applications.</li>
-                      <li>Its purpose is to reduce security risk by helping the organization understand which vulnerabilities are most important and coordinate remediation, such as patching or updating the affected software.</li>
-                    </ol>
-                    <ul>
-                      <li>The main purpose is to reduce the organization's attack surface and security risk by fixing vulnerabilities before attackers can exploit them.</li>
-                    </ul>
-                `,
-            },
-
-            {
-              question: "What is ASR – Attack Surface Reduction?",
-
-              answer: `
-                    <ul>
-                        <li>ASR stands for <strong>Attack Surface Reduction</strong>.</li>
-                        <li>ASR rules help reduce common attack techniques used by malware and attackers.</li>
-                        <li>Examples include blocking suspicious Office child processes and risky script behavior.</li>
-                        <li>Policies should be tested and fine-tuned before broad enforcement.</li>
-                    </ul>
-                `,
-            },
-
-            {
-              question:
-                "What is AIR – Automated Investigation and Remediation?",
-
-              answer: `
-                    <ul>
-                        <li>AIR stands for <strong>Automated Investigation and Remediation</strong>.</li>
-                        <li>It automatically investigates certain alerts and identifies potentially malicious activities.</li>
-                        <li>It can recommend or perform remediation actions depending on configuration and permissions.</li>
-                        <li>It helps reduce manual investigation effort and improve response time.</li>
-                    </ul>
-                `,
-            },
-
-            {
               question: "What is a False Positive?",
 
               answer: `
@@ -766,6 +783,25 @@
                         <li>I first analyze the alerts, identify the root cause, make the minimum required change, test it on a pilot group,</li>
                         <li>and then monitor the results before applying it to production.</li>
                     </ol>
+                `,
+            },
+            {
+              question: "What is Alert Triage and Security Monitoring?",
+
+              answer: `
+                    <ul>
+                        <li><strong>Security Monitoring:</strong> Continuously monitoring security alerts, incidents, devices and security signals.</li>
+                        <li><strong>Alert Triage:</strong> Reviewing and prioritizing alerts to determine which require investigation.</li>
+                        <li>Check alert severity, affected device, user, threat details and business impact.</li>
+                        <li>Investigate suspicious alerts using Device Timeline, Process Tree, file and network information.</li>
+                        <li>Classify the alert as True Positive, False Positive or requiring further investigation.</li>
+                        <li>Respond or escalate based on the incident severity.</li>
+                        <li>Document the investigation and final outcome.</li>
+                    </ul>
+
+                    <div class="alert alert-success">
+                        Monitor → Triage → Investigate → Classify → Respond/Escalate → Document
+                    </div>
                 `,
             },
           ],
@@ -918,14 +954,13 @@
                 `,
             },
 
-            
             {
               question:
                 "How do you troubleshoot MDE Agent Installation or Onboarding issues?",
 
               answer: `
                     <ul>
-                        <li>I first check whether the Sensor service is running,</li>
+                        <li>Check whether the Sensor service is running,</li>
                         <li>then verify Defender services and network connectivity.</li>
                         <li>I check proxy or firewall issues,</li>
                         <li>verify that the onboarding script was executed correctly,</li>
@@ -934,69 +969,52 @@
                 `,
             },
 
+            {
+              question:
+                "How to create a configuration policy for MDE device onboarding?",
+
+              answer: `
+                  <ol>
+                    <li>Login to Microsoft Intune Admin Center.</li>
+                    <li>Go to Endpoint security → Endpoint detection and response.</li>
+                    <li>Click Create Policy.</li>
+                    <li>Select Platform: Windows and Profile: Endpoint detection and response.</li>
+                    <li>In Configuration settings, select Auto from connector for the MDE onboarding package.</li>
+                    <li>Select the device group under Assignments.</li>
+                    <li>Click Create and monitor the deployment status.</li>
+                  </ol>
+                `,
+            },
+
+            {
+              question:
+                "How to check events/logs on a device that is getting onboarded?",
+
+              answer: `
+                  <ol>
+                    <li>On the Windows device, open Event Viewer.</li>
+                    <li>Go to Applications and Services Logs.</li>
+                    <li>Go to Microsoft → Windows → SENSE.</li>
+                    <li>Open Operational.</li>
+                    <li>Check Warning/Error/Critical events.</li>
+                    <li>Use the event details to identify the onboarding problem.</li>
+                  </ol>
+                  <ul>
+                    <li>You can also check the onboarding script events under:</li>
+                    <li>Windows Logs → Application → WDATPOnboarding.</li>  
+                  </ul>
+                `,
+            }
             
           ],
         },
 
+        
         /* PART 5 */
 
         {
           id: "part5",
-          title: "Part 5 – Report Preparation & Generation",
-          description:
-            "Practical MDE agent and endpoint operational experience",
-
-          questions: [
-            {
-              question:
-                "How to generate reports in Microsoft Defender for Endpoint?",
-
-              answer: `
-                    <ul>
-                        <li>Login to Microsoft Defender Portal.</li>
-                        <li>Go to Reports from the left-side navigation.</li>
-                        <li>Select the required report/category, such as: Endpoints, Incidents & alerts, Vulnerabilities, Device health</li>
-                        <li>Select the required date range, devices, severity, or other filters.</li>
-                        <li>Review and generate the report.</li>
-                        <li>Export the report if the required.</li>
-                    </ul>
-                `,
-            },
-
-            {
-              question:
-                "What type of reports you prepared in Microsoft Defender for Endpoint?",
-              answer: `
-                    <ul>
-                        I prepared reports such as incident and alert reports,
-                        device health and onboarding reports,
-                        malware or threat reports, vulnerability reports, and security recommendation reports
-                    </ul>
-                `,
-            },
-
-            {
-              question: "Prepare report for security incidents?",
-
-              answer: `
-                  <ul>
-                      <li>First, I collect the incident details from the Microsoft Defender portal.</li>
-                      <li>I record the incident name, severity, date/time, affected device, and user.</li>
-                      <li>I mention what suspicious activity or threat was detected.</li>
-                      <li>I document my investigation findings, such as Process Tree, File Hash, Network Activity, and Device Timeline.</li>
-                      <li>I mention the actions taken, such as device isolation, file quarantine, or blocking the malicious activity.</li>
-                      <li>Finally, I mention the current status, root cause if identified, and recommended next steps.</li>
-                  </ul>
-              `,
-            },
-          ],
-        },
-
-        /* PART 6 */
-
-        {
-          id: "part6",
-          title: "Part 6 – Microsoft Purview & DLP",
+          title: "Part 5 – Microsoft Purview & DLP",
           description:
             "Microsoft Purview, Data Loss Prevention and data security",
 
@@ -1170,11 +1188,12 @@
           ],
         },
 
-        /* PART 7 */
+        
+        /* PART 6 */
 
         {
-          id: "part7",
-          title: "Part 7 – Incident Response & Scenario-Based Questions",
+          id: "part6",
+          title: "Part 6 – Incident Response & Scenario-Based Questions",
           description:
             "Important L1/L2 incident response and scenario-based questions",
 
@@ -1284,6 +1303,61 @@
           ],
         },
 
+
+        /* PART 7 */
+
+        {
+          id: "part7",
+          title: "Part 7 – Report Preparation & Generation",
+          description:
+            "Practical MDE agent and endpoint operational experience",
+
+          questions: [
+            {
+              question:
+                "How to generate reports in Microsoft Defender for Endpoint?",
+
+              answer: `
+                    <ul>
+                        <li>Login to Microsoft Defender Portal.</li>
+                        <li>Go to Reports from the left-side navigation.</li>
+                        <li>Select the required report/category, such as: Endpoints, Incidents & alerts, Vulnerabilities, Device health</li>
+                        <li>Select the required date range, devices, severity, or other filters.</li>
+                        <li>Review and generate the report.</li>
+                        <li>Export the report if the required.</li>
+                    </ul>
+                `,
+            },
+
+            {
+              question:
+                "What type of reports you prepared in Microsoft Defender for Endpoint?",
+              answer: `
+                    <ul>
+                        I prepared reports such as incident and alert reports,
+                        device health and onboarding reports,
+                        malware or threat reports, vulnerability reports, and security recommendation reports
+                    </ul>
+                `,
+            },
+
+            {
+              question: "Prepare report for security incidents?",
+
+              answer: `
+                  <ul>
+                      <li>First, I collect the incident details from the Microsoft Defender portal.</li>
+                      <li>I record the incident name, severity, date/time, affected device, and user.</li>
+                      <li>I mention what suspicious activity or threat was detected.</li>
+                      <li>I document my investigation findings, such as Process Tree, File Hash, Network Activity, and Device Timeline.</li>
+                      <li>I mention the actions taken, such as device isolation, file quarantine, or blocking the malicious activity.</li>
+                      <li>Finally, I mention the current status, root cause if identified, and recommended next steps.</li>
+                  </ul>
+              `,
+            },
+          ],
+        },
+
         /* PART 8 */
 
         {
@@ -1339,28 +1413,9 @@
                     </table>
                 `,
             },
-
-            {
-              question: "What is Alert Triage and Security Monitoring?",
-
-              answer: `
-                    <ul>
-                        <li><strong>Security Monitoring:</strong> Continuously monitoring security alerts, incidents, devices and security signals.</li>
-                        <li><strong>Alert Triage:</strong> Reviewing and prioritizing alerts to determine which require investigation.</li>
-                        <li>Check alert severity, affected device, user, threat details and business impact.</li>
-                        <li>Investigate suspicious alerts using Device Timeline, Process Tree, file and network information.</li>
-                        <li>Classify the alert as True Positive, False Positive or requiring further investigation.</li>
-                        <li>Respond or escalate based on the incident severity.</li>
-                        <li>Document the investigation and final outcome.</li>
-                    </ul>
-
-                    <div class="alert alert-success">
-                        Monitor → Triage → Investigate → Classify → Respond/Escalate → Document
-                    </div>
-                `,
-            },
           ],
         },
+
 
         /* PART 9*/
         {
