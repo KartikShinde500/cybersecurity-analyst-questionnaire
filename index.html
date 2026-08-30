@@ -1037,11 +1037,11 @@
 
               answer: `
                     <ul>
-                        <li>DLP stands for <strong>Data Loss Prevention</strong>.</li>
-                        <li>It helps prevent sensitive information from being accidentally or intentionally shared or exposed.</li>
-                        <li>It can identify sensitive information such as personal, financial and confidential business data.</li>
-                        <li>DLP can monitor activities such as email sharing, file sharing, copying, printing and supported web/data transfers.</li>
-                        <li>Depending on the policy, DLP can monitor, warn, block or generate alerts.</li>
+                      <li>DLP is a security approach that detects, monitor and prevents sensitive data from being shared, leaked or misused.</li>
+                      <li>DLP ensures sensitive data doesn't leave the organization in an unauthorized way.</li>
+                      <li>It can identify sensitive information such as personal, financial and confidential business data.</li>
+                      <li>DLP can monitor activities such as email sharing, file sharing, copying, printing and supported web/data transfers.</li>
+                      <li>Depending on the policy, DLP can monitor, warn, block or generate alerts.</li>
                     </ul>
                 `,
             },
@@ -1050,7 +1050,10 @@
               question: "How you determine which file contains sensitive data",
               answer: `
                 <ul>
-                    <li>I determine sensitive data mainly using Sensitive Information Types and Sensitivity Labels configured in Microsoft Purview.</li>
+                    <li>I use DLP detection methods to identify sensitive data in a file.</li>
+                    <li>First, I check the file content for Sensitive Information Types using pattern matching, such as PAN, credit card or bank account numbers.</li>
+                    <li>I can also use keyword matching, Sensitivity Labels, or file fingerprinting for known sensitive documents.</li>
+                    <li>Then I check the DLP alert to see which sensitive information was detected and why the policy was triggered.</li>
                     <li>Purview scans the content and looks for defined sensitive patterns such as medical, financial information or other confidential data.</li>
                     <li>DLP policies then use these detections to monitor, alert, warn or block specific activities.</li>
                 </ul>
@@ -1420,7 +1423,7 @@
         /* PART 9*/
         {
           id: "part9",
-          title: "Part 9 – HR Questions",
+          title: "Part 9 – HR Questions & Syllabus",
           description:
             "Common HR and behavioral questions for Security Analyst interviews",
 
@@ -1567,6 +1570,146 @@
                     <li>I am a quick learner and can adapt to new security tools and technologies.</li>
                     <li>I take responsibility for my work and focus on completing tasks accurately.</li>
                     <li>I believe I can contribute to the Security Operations team while continuing to learn and grow.</li>
+                </ul>
+            `,
+            },
+
+            {
+              question: "MDE Syllabus",
+
+              answer: `
+                
+                <strong>Introduction to Microsoft Defender</strong>
+                <ul>
+                  <li>Overview of Microsoft Defender for Endpoint</li>
+                  <li>Core capabilities and components</li>
+                  <li>Microsoft Defender Portal navigation</li>
+                </ul>
+
+                <strong>Understanding Endpoint Security</strong>
+                <ul>
+                  <li>Overview of endpoint security</li>
+                  <li>Types of endpoint security solutions</li>
+                  <li>Endpoint security challenges and their impact on businesses</li>
+                  <li>The need for a comprehensive endpoint security solution</li>
+                </ul>
+
+                <strong>Microsoft Defender Architecture</strong>
+                <ul>
+                  <li>Components of the Microsoft Defender platform</li>
+                  <li>Integration with other security solutions</li>
+                  <li>Data collection and analysis</li>
+                </ul>
+
+                <strong>Next-Generation Protection (NGP)</strong>
+                <ul>
+                  <li>Real-time protection</li>
+                  <li>Cloud-delivered protection</li>
+                  <li>Behavior-based and machine-learning detection</li>
+                  <li>Antivirus configuration and management</li>
+                </ul>
+
+                <strong>Attack Surface Reduction (ASR)</strong>
+                <ul>
+                  <li>ASR rules overview</li>
+                  <li>Device hardening methods</li>
+                  <li>Ransomware protection (Controlled Folder Access)</li>
+                  <li>Device Control and Web Protection</li>
+                  <li>Application Control</li>
+                </ul>
+
+                <strong>Threat &amp; Vulnerability Management (TVM)</strong>
+                <ul>
+                  <li>Vulnerability discovery and prioritization</li>
+                  <li>Software inventory and misconfiguration detection</li>
+                  <li>Exposure scoring and remediation actions</li>
+                </ul>
+
+                <strong>Endpoint Detection &amp; Response (EDR)</strong>
+                <ul>
+                  <li>Telemetry and behavioural monitoring</li>
+                  <li>Alerts and incident lifecycle</li>
+                  <li>Manual response (isolate device, quarantine file, block indicators)</li>
+                  <li>Forensics and timeline analysis</li>
+                </ul>
+
+                <strong>Microsoft Defender XDR (Cross-Domain Protection)</strong>
+                <ul>
+                  <li>Integration with identity, email, cloud apps</li>
+                  <li>Unified incidents across services</li>
+                  <li>Cross-service automated defense</li>
+                  <li>End-to-end threat visibility</li>
+                </ul>
+
+                <strong>Deployment &amp; Configuration</strong>
+                <ul>
+                  <li>Endpoint onboarding methods</li>
+                  <li>Policy configuration (ASR, firewall, antivirus)</li>
+                  <li>RBAC and permissions setup</li>
+                  <li>Monitoring and reporting</li>
+                </ul>
+
+                <strong>Advanced Threat Hunting (KQL)</strong>
+                <ul>
+                  <li>Introduction to Kusto Query Language</li>
+                  <li>Writing custom hunting queries</li>
+                  <li>Using logs from devices, identities, email, cloud apps</li>
+                  <li>Threat investigation using hunting results</li>
+                </ul>
+            `,
+            },
+
+            {
+              question: "DLP Syllabus",
+
+              answer: `
+                <strong>Introducing Data Loss Prevention (DLP)</strong>
+                <ul>
+                  <li>Introducing Data Loss Prevention (DLP)</li>
+                  <li>Introducing Microsoft DLP Tools</li>
+                  <li><strong>Lab:</strong> Introducing Microsoft DLP Tools</li>
+                </ul>
+
+                <strong>Prevent data loss with Microsoft Purview</strong>
+                <ul>
+                  <li>Data loss prevention overview</li>
+                  <li>Plan and design DLP policies</li>
+                  <li>Understand DLP policy deployment and simulation mode</li>
+                  <li>Create and manage DLP policies</li>
+                  <li>Integrate Adaptive Protection with DLP</li>
+                  <li>Use DLP analytics (preview) to identify data risks</li>
+                  <li>Understand DLP alerts and activity tracking</li>
+                </ul>
+
+                <strong>Implement endpoint data loss prevention (DLP) with Microsoft Purview</strong>
+                <ul>
+                  <li>Endpoint data loss prevention (DLP) overview</li>
+                  <li>Understand the endpoint DLP implementation workflow</li>
+                  <li>Onboard devices for endpoint DLP</li>
+                  <li>Configure settings for endpoint DLP</li>
+                  <li>Create and manage endpoint DLP policies</li>
+                  <li>Deploy the Microsoft Purview browser extension</li>
+                  <li>Configure just-in-time (JIT) protection</li>
+                </ul>
+
+                <strong>Configure DLP policies for Microsoft Defender for Cloud Apps and Power Platform</strong>
+                <ul>
+                  <li>Configure data loss prevention policies for Power Platform</li>
+                  <li>Integrate data loss prevention in Microsoft Defender for Cloud Apps</li>
+                  <li>Configure policies in Microsoft Defender for Cloud Apps</li>
+                  <li>Manage data loss prevention violations in Microsoft Defender for Cloud Apps</li>
+                </ul>
+
+                <strong>Investigate and respond to Microsoft Purview Data Loss Prevention alerts</strong>
+                <ul>
+                  <li>Understand data loss prevention (DLP) alerts</li>
+                  <li>Understand the DLP alert lifecycle</li>
+                  <li>Configure DLP policies to generate alerts</li>
+                  <li>Investigate DLP alerts in Microsoft Purview</li>
+                  <li>Investigate DLP alerts in Microsoft Defender XDR</li>
+                  <li>Investigate DLP alerts with Security Copilot and AI agents</li>
+                  <li>Respond to DLP alerts</li>
+                  <li>Exercise – Investigate a DLP alert and related incident</li>
                 </ul>
             `,
             },
