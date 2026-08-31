@@ -535,6 +535,17 @@
             },
 
             {
+              question: "What is TLS?",
+
+              answer: `
+                  <ul>
+                    <li>Transport Layer Security (TLS) is a security protocol.</li>
+                    <li>that encrypts data sent over the internet to keep information private and safe.</li>
+                  </ul>
+                `,
+            },
+
+            {
               question: "What is the difference between a Router and a Switch?",
 
               answer: `
@@ -1028,6 +1039,8 @@
                         <li>It provides capabilities for data security, governance, classification, DLP and compliance.</li>
                         <li>It helps organizations understand where sensitive data exists and how it is being used.</li>
                         <li>It helps protect data across supported Microsoft 365, endpoint and cloud environments.</li>
+                        <li>I worked with Microsoft Purview DLP to create and monitor policies for sensitive information such as credit card numbers and personal data.
+                          I would normally start with identifying the sensitive data and business requirements, create the DLP policy, test it in simulation or audit mode, monitor alerts and activities, tune false positives, and then move the policy to enforcement mode."</li>
                     </ul>
                 `,
             },
@@ -1036,42 +1049,50 @@
               question: "What is Data Loss Prevention (DLP)?",
 
               answer: `
-                    <ul>
-                      <li>DLP is a security approach that detects, monitor and prevents sensitive data from being shared, leaked or misused.</li>
-                      <li>DLP ensures sensitive data doesn't leave the organization in an unauthorized way.</li>
-                      <li>It can identify sensitive information such as personal, financial and confidential business data.</li>
-                      <li>DLP can monitor activities such as email sharing, file sharing, copying, printing and supported web/data transfers.</li>
-                      <li>Depending on the policy, DLP can monitor, warn, block or generate alerts.</li>
-                    </ul>
+                  <ul>
+                    <li>DLP is a security approach that detects, monitor and prevents sensitive data from being shared, leaked or misused.</li>
+                    <li>DLP ensures sensitive data doesn't leave the organization in an unauthorized way.</li>
+                    <li>It can identify sensitive information such as personal, financial and confidential business data.</li>
+                    <li>DLP can monitor activities such as email sharing, file sharing, copying, printing and supported web/data transfers.</li>
+                    <li>Depending on the policy, DLP can monitor, warn, block or generate alerts.</li>
+                  </ul>
+
+                  <strong>The main purpose of DLP :</strong>
+                  <ul>
+                    <li>Identify sensitive data such as: Credit card numbers, Bank account details, Personal information, Confidential business information</li>
+                    <li>Monitor where sensitive data is being used.</li>
+                    <li>Prevent unauthorized sharing or transfer.</li>
+                    <li>Generate alerts/incidents when a DLP rule is violated.</li>
+                    <li>Apply actions such as: Block, Restrict access, Warn the user, Generate an alert, Audit the activity</li>
+                  </ul>
                 `,
             },
 
             {
-              question: "How you determine which file contains sensitive data",
+              question: "How to determine or identify sensitive information?",
               answer: `
                 <ul>
-                    <li>I use DLP detection methods to identify sensitive data in a file.</li>
-                    <li>First, I check the file content for Sensitive Information Types using pattern matching, such as PAN, credit card or bank account numbers.</li>
-                    <li>I can also use keyword matching, Sensitivity Labels, or file fingerprinting for known sensitive documents.</li>
-                    <li>Then I check the DLP alert to see which sensitive information was detected and why the policy was triggered.</li>
-                    <li>Purview scans the content and looks for defined sensitive patterns such as medical, financial information or other confidential data.</li>
-                    <li>DLP policies then use these detections to monitor, alert, warn or block specific activities.</li>
+                  <li>Microsoft Purview uses Sensitive Information Types (SITs) to identify sensitive data.</li>
+                  <li>SITs use detection methods such as pattern matching, keywords, supporting evidence, proximity, and confidence levels.</li>
+                  <li>For example, if Purview needs to identify a credit card number, it checks whether the content matches the expected number pattern and may also look for supporting keywords or other evidence.</li>
+                  <li>Based on the match and confidence level, Purview determines whether the content is sensitive.</li>
                 </ul>
             `,
             },
             
             {
               question:
-                "How will you implement Microsoft Purview DLP in an organization?",
+                "How do you implement DLP policy?",
 
               answer: `
-                    <ol>
-                        <li>I would first identify the sensitive data and understand where it is stored.</li>
-                        <li>Then I would create the Purview DLP policy and initially test it in simulation mode.</li>
-                        <li>I would analyze the results and reduce false positives.</li>
-                        <li>After validation, I would gradually enable enforcement for selected users or departments.</li>
-                        <li>Finally, I would monitor DLP alerts and Activity Explorer and continuously fine-tune the policy based on business requirements.</li>
-                    </ol>
+                    <ul>
+                      <li>First, I identify what sensitive data needs to be protected and understand the business requirement.</li>
+                      <li>Then I identify where the data exists and what risky activities need to be controlled.</li>
+                      <li>I create the DLP policy with appropriate Sensitive Information Types and conditions.</li>
+                      <li>Initially, I deploy the policy in simulation or audit mode to monitor the impact and identify false positives.</li>
+                      <li>I review DLP alerts and Activity Explorer, tune the policy based on the results, and once I am confident, I move it to enforcement mode.</li>
+                      <li>After enforcement, I continuously monitor alerts and activities and make further policy adjustments when required.</li>
+                    </ul>
                 `,
             },
 
