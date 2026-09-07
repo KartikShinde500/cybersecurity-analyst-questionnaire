@@ -485,6 +485,19 @@
             },
 
             {
+              question: "What is TLS?",
+
+              answer: `
+                  <ul>
+                    <li>TLS stands for Transport Layer Security.
+                    <li>It protects data during network communication.
+                    <li>Provides: Encryption, Data integrity, Server authentication.
+                    <li>HTTPS uses TLS.</li>
+                  </ul>
+                `,
+            },
+
+            {
               question: "What is DNS?",
 
               answer: `
@@ -531,17 +544,6 @@
                       <li>assigned to a device's network card by the maker.</li>
                       <li>It controls how data packets are sent to the correct local device on a network segment</li>
                     </ul>
-                `,
-            },
-
-            {
-              question: "What is TLS?",
-
-              answer: `
-                  <ul>
-                    <li>Transport Layer Security (TLS) is a security protocol.</li>
-                    <li>that encrypts data sent over the internet to keep information private and safe.</li>
-                  </ul>
                 `,
             },
 
@@ -982,18 +984,57 @@
 
             {
               question:
-                "How to create a configuration policy for MDE device onboarding?",
+                "A legitimate application is blocked by MDE. What will you do?",
 
               answer: `
-                  <ol>
-                    <li>Login to Microsoft Intune Admin Center.</li>
-                    <li>Go to Endpoint security → Endpoint detection and response.</li>
-                    <li>Click Create Policy.</li>
-                    <li>Select Platform: Windows and Profile: Endpoint detection and response.</li>
-                    <li>In Configuration settings, select Auto from connector for the MDE onboarding package.</li>
-                    <li>Select the device group under Assignments.</li>
-                    <li>Click Create and monitor the deployment status.</li>
-                  </ol>
+                    <ol>
+                        <li>Verify that the application is legitimate and business-approved.</li>
+                        <li>Investigate the MDE detection.</li>
+                        <li>Check Device Timeline and Process Tree.</li>
+                        <li>Check file information, hash and publisher.</li>
+                        <li>Confirm whether it is a false positive.</li>
+                        <li>Follow the organization's approval process.</li>
+                        <li>Apply the minimum required and specific policy adjustment or exclusion.</li>
+                        <li>Verify the application works after the change.</li>
+                        <li>Monitor the endpoint.</li>
+                    </ol>
+                `,
+            },
+
+            {
+              question:
+                "What will you do if an MDE Agent is not communicating with the Defender Portal?",
+
+              answer: `
+                    <ol>
+                        <li>Check the device's Last Seen status.</li>
+                        <li>Check network connectivity.</li>
+                        <li>Check proxy and firewall configuration.</li>
+                        <li>Verify the MDE sensor/service is running.</li>
+                        <li>Verify that the device is correctly onboarded.</li>
+                        <li>Review available logs and error information.</li>
+                        <li>Troubleshoot the issue or coordinate with the IT/Network team.</li>
+                        <li>Verify communication and telemetry after remediation.</li>
+                    </ol>
+                `,
+            },
+
+            {
+              question:
+                "What will you do if an endpoint shows unhealthy in MDE?",
+
+              answer: `
+                    <ol>
+                        <li>Check Device Health information.</li>
+                        <li>Check Last Seen and sensor health.</li>
+                        <li>Verify network connectivity.</li>
+                        <li>Verify the MDE sensor/service.</li>
+                        <li>Check onboarding and configuration.</li>
+                        <li>Review available health information and logs.</li>
+                        <li>Troubleshoot the root cause.</li>
+                        <li>Coordinate with the IT/endpoint team when required.</li>
+                        <li>Verify that the device returns to a healthy state.</li>
+                    </ol>
                 `,
             },
 
@@ -1015,8 +1056,37 @@
                     <li>Windows Logs → Application → WDATPOnboarding.</li>  
                   </ul>
                 `,
-            }
-            
+            },
+            {
+              question:
+                "Action taken on a suspecius file in MDE?",
+
+              answer: `
+                  <ul>
+                    <li>If the file is confirmed to be malicious, I would take appropriate actions such as:</li>
+                    <li>Quarantine the file to prevent it from running.</li>
+                    <li>Block the file/hash if required and supported by the organization's configuration.</li>
+                    <li>Stop the related malicious process if it is currently running.</li>
+                    <li>Isolate the device if there is an active compromise or risk of spreading.</li>
+                    <li>Run an antivirus scan to check for additional threats.</li>
+                    <li>Check other devices for the same file hash or indicators of compromise (IOCs).</li>
+                  </ul>
+                `,
+            },
+
+            {
+              question:
+                "Action taken on compromised device in MDE or MS Defender XDR",
+              answer: `
+                  <ul>
+                    <li>If I confirm ransomware on a device, my first priority would be to isolate the device to prevent further spread.</li>
+                    <li>Then I would investigate the Device Timeline and Process Tree, collect additional evidence if required, run an antivirus scan, and remove or quarantine the malicious files.</li>
+                    <li>I would also check other devices for the same indicators of compromise.</li>
+                    <li>Stop or block a malicious process when required.</li>
+                    <li>After remediation, I would coordinate with the IT/Incident Response team for recovery and document all actions taken.</li>
+                  </ul>
+                `,
+            },
           ],
         },
 
@@ -1269,61 +1339,7 @@
                 `,
             },
 
-            {
-              question:
-                "A legitimate application is blocked by MDE. What will you do?",
-
-              answer: `
-                    <ol>
-                        <li>Verify that the application is legitimate and business-approved.</li>
-                        <li>Investigate the MDE detection.</li>
-                        <li>Check Device Timeline and Process Tree.</li>
-                        <li>Check file information, hash and publisher.</li>
-                        <li>Confirm whether it is a false positive.</li>
-                        <li>Follow the organization's approval process.</li>
-                        <li>Apply the minimum required and specific policy adjustment or exclusion.</li>
-                        <li>Verify the application works after the change.</li>
-                        <li>Monitor the endpoint.</li>
-                    </ol>
-                `,
-            },
-
-            {
-              question:
-                "What will you do if an MDE Agent is not communicating with the Defender Portal?",
-
-              answer: `
-                    <ol>
-                        <li>Check the device's Last Seen status.</li>
-                        <li>Check network connectivity.</li>
-                        <li>Check proxy and firewall configuration.</li>
-                        <li>Verify the MDE sensor/service is running.</li>
-                        <li>Verify that the device is correctly onboarded.</li>
-                        <li>Review available logs and error information.</li>
-                        <li>Troubleshoot the issue or coordinate with the IT/Network team.</li>
-                        <li>Verify communication and telemetry after remediation.</li>
-                    </ol>
-                `,
-            },
-
-            {
-              question:
-                "What will you do if an endpoint shows unhealthy in MDE?",
-
-              answer: `
-                    <ol>
-                        <li>Check Device Health information.</li>
-                        <li>Check Last Seen and sensor health.</li>
-                        <li>Verify network connectivity.</li>
-                        <li>Verify the MDE sensor/service.</li>
-                        <li>Check onboarding and configuration.</li>
-                        <li>Review available health information and logs.</li>
-                        <li>Troubleshoot the root cause.</li>
-                        <li>Coordinate with the IT/endpoint team when required.</li>
-                        <li>Verify that the device returns to a healthy state.</li>
-                    </ol>
-                `,
-            },
+            
           ],
         },
 
