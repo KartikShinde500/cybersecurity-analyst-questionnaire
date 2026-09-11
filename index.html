@@ -210,7 +210,7 @@
 
   <body>
     <!-- <div class="container main-container px-5" style="margin-bottom: 600px"> -->
-    <div class="container main-container">
+    <div class="container main-container mb-5">
       <!-- Page Header -->
       <div class="text-center mb-4">
         <h2 class="page-title">Cybersecurity Interview Preparation</h2>
@@ -245,7 +245,7 @@
           questions: [
             {
               question: "Tell me about yourself.",
-              status: "done",
+              status: "imp",
               answer: `
                     <ul>
                         <li>My name is Kartik Shinde and I am from Pune.</li>
@@ -255,6 +255,13 @@
                         <li>My responsibilities included security monitoring, alert investigation, endpoint analysis and incident reporting.</li>
                         <li>I am interested in Security Operations, Incident Response and Threat Detection.</li>
                     </ul>
+                    <p>
+                      My name is Kartik Shinde. I completed my MCA in 2025.
+                      I started my career as a Software Engineer Trainee, where I got an opportunity to work with the Cyber Security Defence team.
+                      I have exposure to Microsoft Defender for Endpoint, Microsoft Defender XDR and Microsoft Purview DLP.
+                      My work mainly involved alert monitoring, investigation, endpoint analysis, MDE agent-related activities, DLP alert investigation and incident documentation.
+                      I am interested in growing my career in Cyber Security, especially Security Operations and Microsoft Security technologies.  
+                    </p>
                 `,
             },
 
@@ -262,29 +269,28 @@
               question:
                 "What are the roles and responsibilities of a Security Analyst?",
 
-              status: "done",
+              status: "imp",
 
               answer: `
                     <ul>
-                        <li>Monitor security alerts and incidents.</li>
-                        <li>Perform alert triage based on severity.</li>
-                        <li>Investigate suspicious activities.</li>
-                        <li>Use Device Timeline and Process Tree for investigation.</li>
-                        <li>Analyze file information and network activity.</li>
-                        <li>Monitor MDE agent/device health.</li>
-                        <li>Agent installation and onboarding.</li>
-                        <li>Troubleshoot agent installation and onboarding issues.</li>
-                        <li>Fine-tune security policies.</li>
-                        <li>Escalate critical incidents.</li>
-                        <li>Prepare daily/weekly security reports.</li>
-                        <li>Coordinate with IT teams for remediation.</li>
+                      <li>MDE Agent Installation & Onboarding</li>
+                      <li>Troubleshoot agent installation and onboarding issues.</li>
+                      <li>Application/File Whitelisting.</li>
+                      <li>Network Firewall Whitelisting</li>
+                      <li>Monitor security alerts and incidents.</li>
+                      <li>Perform alert triage based on severity.</li>
+                      <li>Investigate suspicious activities.</li>
+                      <li>Analyze file information and network activity.</li>
+                      <li>Endpoint Health Monitoring</li>
+                      <li>Day-to-day MDE Security Operations</li>
+                      <li>Coordinate with IT teams for remediation.</li>
                     </ul>
                 `,
             },
 
             {
               question: "What is a Security Incident?",
-              status: "done",
+              status: "imp",
 
               answer: `
                     <ol>
@@ -338,7 +344,10 @@
 
             {
               question: "Phishing Attack?",
-              answer: `Phishing is a social engineering attack used to fake messages or websites to trick victims into giving away sensitive information.`,
+              status: "imp",
+
+              answer: `Phishing is a social-engineering attack.
+              where an attacker sends a fake email, message or website to trick users into revealing credentials, downloading malware or providing sensitive information.`,
             },
 
             {
@@ -385,6 +394,7 @@
           questions: [
             {
               question: "What is Networking?",
+              status: "imp",
 
               answer: `
                     <ul>
@@ -397,6 +407,7 @@
 
             {
               question: "What is a Firewall?",
+              status: "imp",
 
               answer: `
                     <ul>
@@ -583,6 +594,7 @@
           questions: [
             {
               question: "What is Microsoft Defender for Endpoint?",
+              status: "imp",
 
               answer: `
                     <ol class="">
@@ -833,6 +845,7 @@
             {
               question:
                 "How would you deploy Microsoft Defender for Endpoint on 25,000 devices?",
+              status: "imp",
 
               answer: `
                     <ol>
@@ -851,6 +864,7 @@
 
             {
               question: "What challenges can occur during Defender deployment?",
+              status: "imp",
 
               answer: `
                     <ul>
@@ -880,8 +894,7 @@
 
             {
               question: "What is your daily MDE operational activities?",
-
-              status: "done",
+              status: "imp",
 
               answer: `
                     <ul>
@@ -901,10 +914,18 @@
             {
               question:
                 "Steps for Device/Endpoint Onboarding?",
-              status: "done",
+              status: "imp",
+
+              // status: "done",
               // status:"revision",
 
               answer: `
+                    <ul class="card bg-success-subtle">
+                      <li>First, I log in to the Microsoft Defender portal and go to Device Onboarding. select the required operating system and onboarding method.</li>
+                      <li>The onboarding package is then generated or downloaded and shared with the Intune team for deployment.</li>
+                      <li>After the package is deployed on devices, I verify that the endpoints are successfully onboarded and reporting properly in the Defender portal.</li>
+                    </ul>
+
                     <ol>
                         <li>First step is Log in to Microsoft Defender Portal</li>
                         <li>Then Go to onboarding.
@@ -923,8 +944,7 @@
             {
               question:
                 "What issues you faced while working with Microsoft Defender for Endpoint and how did you handle them?",
-
-              status: "done",
+              status: "imp",
 
               answer: `
                     <ul>
@@ -956,20 +976,8 @@
 
             {
               question:
-                "Microsoft Defender for Endpoint using Intune on a device?",
-
-              answer: `
-                    <ol>
-                      <li>For an Intune-managed device, I first make sure the device is enrolled in Intune.</li>
-                      <li>Then I configure the MDE onboarding policy under Endpoint Security, assign it to the appropriate device group, and allow Intune to push the configuration.</li>
-                      <li>Finally, I verify that the device is onboarded and reporting correctly in the Microsoft Defender Portal.</li>
-                    </ol>
-                `,
-            },
-
-            {
-              question:
                 "How do you troubleshoot MDE Agent Installation or Onboarding issues?",
+              status: "imp",
 
               answer: `
                     <ul>
@@ -979,12 +987,22 @@
                         <li>verify that the onboarding script was executed correctly,</li>
                         <li>and finally check the Defender Portal to confirm the device is reporting properly.</li>
                     </ul>
+                    <ul>
+                      <li>Device not visible → verify onboarding configuration, connectivity and sensor/service health.</li>
+                      <li>Telemetry missing → check last seen, connectivity and endpoint sensor status.</li>
+                      <li>Application blocked → review alert, Process Tree, Device Timeline, file details and responsible policy.</li>
+                      <li>Too many alerts → identify the rule, analyze false-positive patterns, validate business workflows and tune narrowly.</li>
+                      <li>USB blocked → inspect DeviceEvents and actual ActionType values, confirm device identity and business requirement.</li>
+                      <li>Firewall issue → verify rule direction, protocol, port, application, assignment and local firewall logs.</li>
+                      <li>Policy not applying → verify device group membership, Intune sync/check-in and policy status.</li>
+                    </ul>
                 `,
             },
 
             {
               question:
                 "A legitimate application is blocked by MDE. What will you do?",
+              status: "imp",
 
               answer: `
                     <ol>
@@ -1022,6 +1040,7 @@
             {
               question:
                 "What will you do if an endpoint shows unhealthy in MDE?",
+              status: "imp",
 
               answer: `
                     <ol>
@@ -1041,6 +1060,7 @@
             {
               question:
                 "How to check events/logs on a device that is getting onboarded?",
+              status: "imp",
 
               answer: `
                   <ol>
@@ -1060,6 +1080,7 @@
             {
               question:
                 "Action taken on a suspecius file in MDE?",
+              status: "imp",
 
               answer: `
                   <ul>
@@ -1077,6 +1098,8 @@
             {
               question:
                 "Action taken on compromised device in MDE or MS Defender XDR",
+              status: "imp",
+
               answer: `
                   <ul>
                     <li>If I confirm ransomware on a device, my first priority would be to isolate the device to prevent further spread.</li>
@@ -1102,6 +1125,7 @@
           questions: [
             {
               question: "What is Microsoft Purview?",
+              status: "imp",
 
               answer: `
                     <ul>
@@ -1140,6 +1164,8 @@
 
             {
               question: "How to determine or identify sensitive information?",
+              status: "imp",
+
               answer: `
                 <ul>
                   <li>Microsoft Purview uses Sensitive Information Types (SITs) to identify sensitive data.</li>
@@ -1169,6 +1195,8 @@
             {
               question:
                 "Steps to Create a Microsoft Purview DLP Policy",
+              status: "imp",
+
 
               answer: `
                     <ol>
@@ -1188,6 +1216,7 @@
 
             {
               question: "How you investigate DLP alert?",
+              status: "imp",
 
               answer: `
                     <ol>
@@ -1200,6 +1229,7 @@
            
             {
               question: "DLP is generating too many alerts. What will you do?",
+              status: "imp",
 
               answer: `
                 <ul>
@@ -1214,6 +1244,7 @@
             {
               question:
                 "A DLP policy blocks a business-critical file. What will you do?",
+              status: "imp",
 
               answer: `
                     <ol>
@@ -1228,6 +1259,7 @@
             {
               question:
                 "Tell me about your DLP experience What operations you performed",
+              status: "imp",
 
               answer: `
                 <ul>
@@ -1242,6 +1274,7 @@
             {
               question:
                 "What is Activity Explorer?",
+              status: "imp",
 
               answer: `
                     <ul>
@@ -1255,6 +1288,7 @@
             {
               question:
                 "Why might a DLP policy fail to trigger",
+              status: "imp",
 
               answer: `
                     <ul>
@@ -1271,6 +1305,8 @@
             {
               question:
                 "How do you troubleshoot DLP policy fail to trigger?",
+              status: "imp",
+
               answer: `
                     <ul>
                       <li>If a DLP policy does not trigger, I first check whether the correct location and users are included.</li>
@@ -1295,8 +1331,7 @@
             {
               question:
                 "How do you investigate an incident from start to finish and what actions do you take?",
-              status: "revision",
-
+              status: "imp",
               answer: `
                   <ol>
                     <li>First, I review the alert details, their severity, affected device, and user.</li>
@@ -1310,6 +1345,7 @@
 
             {
               question: "Tell me about an incident you investigated.",
+              status: "imp",
 
               answer: `
                     <ol>
@@ -1322,6 +1358,7 @@
             {
               question:
                 "If a Malware or Ransomware alert is generated, what will you do?",
+              status: "imp",
 
               answer: `
                     <ol>
@@ -1356,6 +1393,7 @@
             {
               question:
                 "How to generate reports in Microsoft Defender for Endpoint?",
+              status: "imp",
 
               answer: `
                     <ul>
@@ -1372,6 +1410,8 @@
             {
               question:
                 "What type of reports you prepared in Microsoft Defender for Endpoint?",
+              status: "imp",
+
               answer: `
                     <ul>
                         I prepared reports such as incident and alert reports,
@@ -1383,6 +1423,7 @@
 
             {
               question: "Prepare report for security incidents?",
+              status: "imp",
 
               answer: `
                   <ul>
@@ -1752,6 +1793,64 @@
             },
           ],
         },
+
+        /* PART 10 */
+        {
+          id: "part10",
+          title: "Part 10 – Most IMP Questions.",
+          description:
+            "Practical MDE agent and endpoint operational experience",
+        
+          questions: [
+            {
+              question:
+                "Most IMP Questions",
+              answer: `
+                <div>  1. Introduction</div>
+                <div>  2. Roles and responsibilities of a security analyst?</div>
+                <div>  3. What is Incident?</div>
+                <div>  4. Phishing attack?</div>
+                <br>              
+                <div>  5. What is Networking?</div>
+                <div>  6. What is firewall?</div>
+                <br>              
+                <div>  7. What is MDE and what capabilities MDE provides?</div>
+                <br>              
+                <div>  8. How would you deploy Microsoft Defender for Endpoint on 25,000 devices?</div>
+                <div>  9. What challenges can occur during Defender deployment?</div>
+                <div>  10. What is your daily MDE operational activities?</div>
+                <div>  11. Steps for Device/Endpoint Onboarding?</div>
+                <div>  12. What issues you faced while working with Microsoft Defender for Endpoint and how did you handle them?</div>
+                <div>  13. How do you troubleshoot MDE Agent Installation?</div>
+                <div>  14. A legitimate application is blocked by MDE. What will you do?</div>
+                <div>  15. What will you do if an endpoint shows unhealthy in MDE?</div>
+                <div>  16. How to check events/logs on a device that is getting onboarded?</div>
+                <div>  17. Action taken on a suspecius file in MDE?</div>
+                <div>  18  Action taken on compromised device in MDE?</div>
+                <br>              
+                <div>  19. What is Microsoft Purview and DLP?</div>
+                <div>  20. How to determine or identify sensitive information?</div>
+                <div>  21. Steps to Create a Microsoft Purview DLP Policy?</div>
+                <div>  22. How you investigate DLP alert?</div>
+                <div>  23. DLP is generating too many alerts. What will you do?</div>
+                <div>  24. A DLP policy blocks a business-critical file. What will you do?</div>
+                <div>  25. Tell me about your DLP experience What operations you performed</div>
+                <div>  26. What is Activity Explorer?</div>
+                <div>  27. Why might a DLP policy fail to trigger</div>
+                <div>  28. How do you troubleshoot DLP policy fail to trigger?</div>
+                <br>              
+                <div>  29. How do you investigate an incident from start to finish and what actions do you take?</div>
+                <div>  30. Tell me about an incident you investigated.</div>
+                <div>  31. If a Malware or Ransomware alert is generated, what will you do?</div>
+                <br>              
+                <div>  32. How to generate reports in Microsoft Defender for Endpoint?</div>
+                <div>  33. What type of reports you prepared in Microsoft Defender for Endpoint?</div>
+                <div>  34. Prepare report for security incidents?</div>
+
+                `,
+            },
+          ],
+        },
       ];
 
       /*
@@ -1782,6 +1881,13 @@ GENERATE HTML DYNAMICALLY
             statusBadge = `
               <span class="badge bg-warning text-dark ms-2">
                   Need Revision
+              </span>
+          `;
+          }
+          else if (item.status === "imp") {
+            statusBadge = `
+              <span class="badge bg-danger text-white ms-2">
+                  IMP
               </span>
           `;
           }
