@@ -852,11 +852,11 @@
                       <li>First, I would understand the environment and check the supported operating systems, network connectivity, proxy and firewall configuration, and existing security solutions.</li>
                       <li>Then I would select the appropriate deployment method, such as Configuration Manager.</li>
                       <li>Before large-scale deployment, I would conduct a POC on a small number of test devices to verify onboarding, sensor health, telemetry, alerts, and application compatibility.</li>
-                      <li>If the POC is successful, I would start a pilot with around 100 devices from IT, Security, and different business departments.</li>
-                      <li>I would monitor the pilot and resolve any issues.</li>
-                      <li>After successful validation, I would gradually deploy MDE in phases, for example 500, 2,000, 5,000, and then the remaining devices.</li>
-                      <li>After each phase, I would monitor onboarding status, device health, alerts, and performance.</li>
-                      <li>Finally, I would onboard the remaining devices and prepare the deployment and health reports.</li>
+                      <li>Then Start with a small Proof of Concept. Deploy to a pilot group containing different departments around 100 devices.</li>
+                      <li>Monitor onboarding status, sensor health, performance and alerts. Resolve issues found during the pilot.</li>
+                      <li>After successful validation, I would gradually Expand deployment in phases, for example 500, 2,000, 5,000, and then the remaining devices.</li>
+                      <li>Track deployment using reports and onboarding health.</li>
+                      <li>Perform final validation and handover to operations.</li>
                     </ol>
 
                 `,
@@ -1097,16 +1097,23 @@
 
             {
               question:
-                "Action taken on compromised device in MDE or MS Defender XDR",
+                "Action taken on compromised device in MDE?",
               status: "imp",
 
               answer: `
+                  Depending on the incident and required permissions, I can:
                   <ul>
-                    <li>If I confirm ransomware on a device, my first priority would be to isolate the device to prevent further spread.</li>
-                    <li>Then I would investigate the Device Timeline and Process Tree, collect additional evidence if required, run an antivirus scan, and remove or quarantine the malicious files.</li>
-                    <li>I would also check other devices for the same indicators of compromise.</li>
-                    <li>Stop or block a malicious process when required.</li>
-                    <li>After remediation, I would coordinate with the IT/Incident Response team for recovery and document all actions taken.</li>
+                    <li>Isolate the device from the network.</li>
+                    <li>Run a Microsoft Defender Antivirus scan.</li>
+                    <li>Collect an investigation package.</li>
+                    <li>Start a Live Response session.</li>
+                    <li>Investigate suspicious processes and files.</li>
+                    <li>Check Device Timeline and Process Tree.</li>
+                    <li>Block malicious file hashes, URLs or IP indicators where approved.</li>
+                    <li>Stop malicious processes when appropriate.</li>
+                    <li>Remove malicious files or persistence using approved procedures.</li>
+                    <li>Monitor the device after remediation.</li>
+                    <li>Escalate for reimaging, credential reset or advanced forensic analysis if required.</li>
                   </ul>
                 `,
             },
@@ -1279,6 +1286,7 @@
               answer: `
                     <ul>
                         <li>Activity Explorer is a monitoring tool in Microsoft Purview that helps us view and investigate data-related activities.</li>
+                        <li>Activity explorer provides a historical view of activities on your labeled content.</li>
                         <li>We can see activities like file access, sharing, copying, modification, and DLP-related activities.</li>
                         <li>It helps us understand who performed the activity, what file was involved, when it happened, and what action was taken</li>
                     </ul>
